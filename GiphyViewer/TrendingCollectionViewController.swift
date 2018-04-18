@@ -12,6 +12,7 @@ import UIKit
 class TrendingCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, RemoteDataConsumer {
     
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+ 
     private let reuseIdentifier = "GiphyCell"
     private var collectionViewSizeChanged: Bool = false
     private let margin: CGFloat = 0.0//20.0
@@ -22,6 +23,7 @@ class TrendingCollectionViewController: UICollectionViewController, UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupFlowLayout()
         viewModel = GiphyViewModel(endPoint: GiphyAPIEndpoint.Trending, delegate: self)
         viewModel.run()
 
@@ -77,6 +79,7 @@ class TrendingCollectionViewController: UICollectionViewController, UICollection
         // Present the view controller using navigation
         navigationController!.pushViewController(detailController, animated: true)
         */
+        
     }
     
     
@@ -137,21 +140,11 @@ class TrendingCollectionViewController: UICollectionViewController, UICollection
     
     //MARK: RemoteDataConsumable Protocol Methods
     func onDataReady() {
-        collectionView?.reloadData()
-        //re-load the collectionView
-        /*
-        if let imageURL = viewModel.thumbNailImageURL(for: 0) {
-            let task = URLSession.shared.dataTask(with: imageURL) {(data, response, error) in
-                if error == nil {
-                    let downloadImage = UIImage(data: data!)
-                    DispatchQueue.main.async {
-                        self.imageView.image = downloadImage
-                    }
-                }
-            }
-            task.resume()
+        
+        DispatchQueue.main.async {
+            self.collectionView?.reloadData()
         }
- */
+     
     }
     
     func onDataError() {

@@ -15,7 +15,7 @@ protocol RemoteDataConsumer: class {
 
 struct GiphyAPIDefault {
     static let queryString:String = "cat"
-    static let limit:UInt = 25
+    static let limit:UInt = 30
     static let rating:GiphyAPIRating = .G
     static let offset:UInt = 0
 }
@@ -99,7 +99,7 @@ class GiphyViewModel {
     func thumbNailImageURL(for index: Int) -> URL? {
 
         if let gif = giphyGif(for: index) {
-            return gif.imageVariantURL(variant: ImageVariant.Downsized)
+            return gif.imageVariantURL(variant: ImageVariant.PreviewGif)
         }
         
         return nil
