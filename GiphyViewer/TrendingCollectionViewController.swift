@@ -70,16 +70,15 @@ class TrendingCollectionViewController: UICollectionViewController, UICollection
     // MARK: UICollectionViewDelegate
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        /* // Grab the DetailVC from Storyboard
-        let detailController = self.storyboard!.instantiateViewController(withIdentifier: self.reuseIdentifier) as! VillainDetailViewController
+        // Grab the DetailVC from Storyboard
+
+        let detailController = self.storyboard!.instantiateViewController(withIdentifier: "GiphyDetailViewController") as! GiphyDetailViewController
         
         //Populate view controller with data from the selected item
-        detailController.villain = allVillains[(indexPath as NSIndexPath).row]
+        detailController.imageURL = viewModel.downsizedImageURL(for: indexPath.row)
         
         // Present the view controller using navigation
         navigationController!.pushViewController(detailController, animated: true)
-        */
-        
     }
     
     

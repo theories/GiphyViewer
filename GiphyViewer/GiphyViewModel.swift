@@ -105,6 +105,15 @@ class GiphyViewModel {
         return nil
     }
     
+    func downsizedImageURL(for index: Int) -> URL? {
+        
+        if let gif = giphyGif(for: index) {
+            return gif.imageVariantURL(variant: ImageVariant.Downsized)
+        }
+        
+        return nil
+    }
+    
     
     func giphyGif(for index: Int) -> GiphyGif? {
         
