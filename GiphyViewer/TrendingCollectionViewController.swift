@@ -16,24 +16,20 @@ class TrendingCollectionViewController: UICollectionViewController, UICollection
     private let reuseIdentifier = "GiphyCell"
     private var collectionViewSizeChanged: Bool = false
     private let margin: CGFloat = 14.0
-    //private var flowLayout: UICollectionViewLayout!
     
     private var viewModel:GiphyViewModel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+
         setupFlowLayout()
         viewModel = GiphyViewModel(endPoint: GiphyAPIEndpoint.Trending, delegate: self)
         viewModel.run()
 
     }
     
-    
-    
-    
+
     // MARK: UICollectionViewDataSource
     
     
@@ -47,8 +43,7 @@ class TrendingCollectionViewController: UICollectionViewController, UICollection
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        
+
         // Configure the cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.reuseIdentifier, for: indexPath) as! GiphyCollectionViewCell
 
@@ -74,8 +69,7 @@ class TrendingCollectionViewController: UICollectionViewController, UICollection
     
     
     
-    override func viewWillTransition(to size: CGSize,
-                                     with coordinator: UIViewControllerTransitionCoordinator) {
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         
         super.viewWillTransition(to: size, with: coordinator)
         
@@ -95,7 +89,6 @@ class TrendingCollectionViewController: UICollectionViewController, UICollection
         
         if collectionViewSizeChanged {
             collectionViewSizeChanged = false
-            //collectionView?.performBatchUpdates({}, completion: nil)
         }
     }
     
@@ -104,11 +97,9 @@ class TrendingCollectionViewController: UICollectionViewController, UICollection
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var minColumns:CGFloat = 3.0
-        //var multiplier:CGFloat = 4.0
         
         if UIInterfaceOrientationIsLandscape(UIApplication.shared.statusBarOrientation) {
             minColumns = 5.0
-            //multiplier = 6.0
         }
         
         let multiplier:CGFloat = minColumns + 1.0
@@ -121,14 +112,12 @@ class TrendingCollectionViewController: UICollectionViewController, UICollection
     }
     
     //MARK: custom methods
-    
     private func setupFlowLayout() {
-        //collectionView?.collectionViewLayout = flowLayout
         flowLayout.minimumInteritemSpacing = margin
         flowLayout.minimumLineSpacing = margin
         flowLayout.sectionInset = UIEdgeInsets(top: margin, left: margin, bottom: 0.0, right: margin)
-        
     }
+    
     
     //MARK: RemoteDataConsumable Protocol Methods
     func onDataReady() {
