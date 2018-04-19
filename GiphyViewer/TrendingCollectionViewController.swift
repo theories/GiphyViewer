@@ -12,6 +12,7 @@ import UIKit
 class TrendingCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, RemoteDataConsumer {
     
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    var refreshControl: UIRefreshControl!
  
     private let reuseIdentifier = "GiphyCell"
     private var collectionViewSizeChanged: Bool = false
@@ -24,6 +25,17 @@ class TrendingCollectionViewController: UICollectionViewController, UICollection
         super.viewDidLoad()
 
         setupFlowLayout()
+        refreshControl = UIRefreshControl()
+        if #available(iOS 10.0, *) {
+            collectionView?.refreshControl = refreshControl
+        }
+        else {
+            collectionView?.addSubview(refreshControl)
+        }
+
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        
         viewModel = GiphyViewModel(endPoint: GiphyAPIEndpoint.Trending, delegate: self)
         viewModel.run()
 
@@ -118,18 +130,28 @@ class TrendingCollectionViewController: UICollectionViewController, UICollection
         flowLayout.sectionInset = UIEdgeInsets(top: margin, left: margin, bottom: 0.0, right: margin)
     }
     
+    @objc private func refreshData(){
+        refreshControl.beginRefreshing()
+        viewModel.run()
+    }
     
-    //MARK: RemoteDataConsumable Protocol Methods
-    func onDataReady() {
+    private func updateUI(){
         
         DispatchQueue.main.async {
             self.collectionView?.reloadData()
+            self.refreshControl.endRefreshing()
         }
-     
+    }
+    
+    
+    //MARK: RemoteDataConsumable Protocol Methods
+    func onDataReady() {
+        updateUI()
     }
     
     func onDataError() {
         //an error occurred loading data
+        updateUI()
     }
     
     
