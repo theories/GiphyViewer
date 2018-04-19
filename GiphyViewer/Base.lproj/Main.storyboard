@@ -48,7 +48,7 @@
         <scene sceneID="6mt-PC-A7G">
             <objects>
                 <collectionViewController id="wUq-V0-rWX" customClass="TrendingCollectionViewController" customModule="GiphyViewer" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ESO-3d-JES">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" dataMode="prototypes" id="ESO-3d-JES">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -60,18 +60,19 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GiphyCell" id="p1M-Eg-aif" customClass="GiphyCollectionViewCell" customModule="GiphyViewer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rlL-e5-MT6">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlL-e5-MT6">
+                                            <rect key="frame" x="5" y="8" width="90" height="72"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </imageView>
                                     </subviews>
                                 </view>
+                                <size key="customSize" width="100" height="100"/>
                                 <connections>
                                     <outlet property="imageView" destination="rlL-e5-MT6" id="ydb-ZI-2Ii"/>
                                 </connections>
@@ -84,7 +85,7 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="YOi-TV-s9a"/>
                     <connections>
-                        <outlet property="flowLayout" destination="aYk-he-jQc" id="1Fc-xT-V3L"/>
+                        <outlet property="flowLayout" destination="aYk-he-jQc" id="ilF-7I-gOj"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M29-iO-Lyj" userLabel="First Responder" sceneMemberID="firstResponder"/>

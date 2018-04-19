@@ -15,13 +15,15 @@ class TrendingCollectionViewController: UICollectionViewController, UICollection
  
     private let reuseIdentifier = "GiphyCell"
     private var collectionViewSizeChanged: Bool = false
-    private let margin: CGFloat = 1.0//20.0
+    private let margin: CGFloat = 14.0
+    //private var flowLayout: UICollectionViewLayout!
     
     private var viewModel:GiphyViewModel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         setupFlowLayout()
         viewModel = GiphyViewModel(endPoint: GiphyAPIEndpoint.Trending, delegate: self)
@@ -102,16 +104,18 @@ class TrendingCollectionViewController: UICollectionViewController, UICollection
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var minColumns:CGFloat = 3.0
+        //var multiplier:CGFloat = 4.0
         
         if UIInterfaceOrientationIsLandscape(UIApplication.shared.statusBarOrientation) {
             minColumns = 5.0
+            //multiplier = 6.0
         }
         
+        let multiplier:CGFloat = minColumns + 1.0
         let rows:CGFloat = CGFloat(viewModel.count()) / minColumns
         let cols:CGFloat = floor(CGFloat(viewModel.count()) / rows)
         
-        //let height = floor(collectionView.frame.size.height - 2.0 * margin) / rows
-        let width = (collectionView.frame.size.width - (2.0 * margin)) / cols
+        let width = floor(collectionView.frame.size.width - (multiplier * margin)) / cols
         
         return CGSize(width: width, height: width)
     }
