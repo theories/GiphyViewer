@@ -15,7 +15,7 @@ class TrendingCollectionViewController: UICollectionViewController, UICollection
  
     private let reuseIdentifier = "GiphyCell"
     private var collectionViewSizeChanged: Bool = false
-    private let margin: CGFloat = 0.0//20.0
+    private let margin: CGFloat = 1.0//20.0
     
     private var viewModel:GiphyViewModel!
     
@@ -49,19 +49,9 @@ class TrendingCollectionViewController: UICollectionViewController, UICollection
         
         // Configure the cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.reuseIdentifier, for: indexPath) as! GiphyCollectionViewCell
-        //if let gif = viewModel.giphyGif(for: indexPath.row),
+
         if let imageURL = viewModel.thumbNailImageURL(for: indexPath.row) {
             cell.imageURL = imageURL
-            //cell.loadImage(url: imageURL)
-        //let villain = self.allVillains[(indexPath as NSIndexPath).row]
-        
-        // Set the name and image
-        //cell.nameLabel.text = villain.name
-        /*cell.topLabel?.text = villain.name
-        cell.bottomLabel?.text = villain.evilScheme//""
-        cell.villainImage?.image = UIImage(named: villain.imageName)
- */
-            
         }
         return cell
         
@@ -71,7 +61,6 @@ class TrendingCollectionViewController: UICollectionViewController, UICollection
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // Grab the DetailVC from Storyboard
-
         let detailController = self.storyboard!.instantiateViewController(withIdentifier: "GiphyDetailViewController") as! GiphyDetailViewController
         
         //Populate view controller with data from the selected item
