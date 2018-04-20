@@ -13,6 +13,7 @@ class GiphyViewModel {
 
     weak var delegate:RemoteDataConsumer?
     var endPoint:GiphyAPIEndpoint!
+    var currentSearchTerm:String?
     
     var model:[GiphyGif]? {
         didSet {
@@ -47,6 +48,8 @@ class GiphyViewModel {
     func doSearch(queryString: String = GiphyAPIDefault.queryString, limit: UInt = GiphyAPIDefault.limit, rating: GiphyAPIRating = GiphyAPIDefault.rating) {
         
         let mgr = GiphyAPIManager(apiKey: "dTYxlzydpneCauqFVT3mnnSteR0M0kwJ")
+        self.endPoint = .Search
+        self.currentSearchTerm = queryString
         
         let _ = mgr.search(queryString: queryString, limit: limit, offset: GiphyAPIDefault.offset, rating: rating, completionHandler: { [weak self] (gifArray, error) in
             if let strongSelf = self {
@@ -58,6 +61,8 @@ class GiphyViewModel {
     func doTrending(limit: UInt = GiphyAPIDefault.limit, rating: GiphyAPIRating = GiphyAPIDefault.rating){
 
         let mgr = GiphyAPIManager(apiKey: "dTYxlzydpneCauqFVT3mnnSteR0M0kwJ")
+        self.endPoint = .Trending
+        self.currentSearchTerm = nil
 
         let _ = mgr.trending(limit: limit, offset: GiphyAPIDefault.offset, rating: rating, completionHandler: { [weak self] (gifArray, error) in
             if let strongSelf = self {

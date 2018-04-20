@@ -129,6 +129,26 @@ class TrendingCollectionViewController: UICollectionViewController, UICollection
     }
     
 
+    //MARK: Header text
+    override func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        if kind == UICollectionElementKindSectionHeader {
+            var v : GiphyCollectionHeader! = nil
+            v = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "GiphyCollectionHeaderView", for: indexPath) as? GiphyCollectionHeader
+            var headerTxt:String = "Now Trending"
+            
+            if let searchTerm = self.viewModel.currentSearchTerm {
+                headerTxt = "Results for: \(searchTerm)"
+            }
+            
+            v.headerTextField.text = headerTxt
+            return v
+        }
+
+        return UICollectionReusableView()
+    }
    
     
     //MARK: custom methods
@@ -176,7 +196,7 @@ class TrendingCollectionViewController: UICollectionViewController, UICollection
             viewModel.requestGiphyAPITrendingData(params: params)
             return
         }
-        
+
         viewModel.requestGiphyAPISearchData(params: params)
     }
     
@@ -185,6 +205,8 @@ class TrendingCollectionViewController: UICollectionViewController, UICollection
     func giphyDefaultRatingIndex() -> Int? {
         return viewModel.giphyDefaultRatingIndex()
     }
+    
+   
     
 }
 

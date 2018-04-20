@@ -29,6 +29,7 @@
 		E46BB085208A3E13001A0A13 /* ViewModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BB083208A3E13001A0A13 /* ViewModelProtocols.swift */; };
 		E46BB088208A3F0A001A0A13 /* VMStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BB087208A3F0A001A0A13 /* VMStructs.swift */; };
 		E46BB089208A3F0A001A0A13 /* VMStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BB087208A3F0A001A0A13 /* VMStructs.swift */; };
+		E46BB08E208AA15B001A0A13 /* GiphyCollectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BB08D208AA15B001A0A13 /* GiphyCollectionHeader.swift */; };
 		E4A10EFC2083E5E6008A0286 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A10EFB2083E5E6008A0286 /* AppDelegate.swift */; };
 		E4A10F012083E5E6008A0286 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4A10EFF2083E5E6008A0286 /* Main.storyboard */; };
 		E4A10F032083E5E6008A0286 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4A10F022083E5E6008A0286 /* Assets.xcassets */; };
@@ -74,6 +75,7 @@
 		E46BB07E208A3C3C001A0A13 /* GiphyAPIEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyAPIEnums.swift; sourceTree = "<group>"; };
 		E46BB083208A3E13001A0A13 /* ViewModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocols.swift; sourceTree = "<group>"; };
 		E46BB087208A3F0A001A0A13 /* VMStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMStructs.swift; sourceTree = "<group>"; };
+		E46BB08D208AA15B001A0A13 /* GiphyCollectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyCollectionHeader.swift; sourceTree = "<group>"; };
 		E4A10EF82083E5E6008A0286 /* GiphyViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GiphyViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4A10EFB2083E5E6008A0286 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4A10F002083E5E6008A0286 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				E42B95412087EC99004655B8 /* GiphyDetailViewController.swift */,
 				E4091E082087A91800311766 /* TrendingCollectionViewController.swift */,
 				E4091E0A2087AD1700311766 /* GiphyCollectionViewCell.swift */,
+				E46BB08D208AA15B001A0A13 /* GiphyCollectionHeader.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E46BB084208A3E13001A0A13 /* ViewModelProtocols.swift in Sources */,
+				E46BB08E208AA15B001A0A13 /* GiphyCollectionHeader.swift in Sources */,
 				E4091E0B2087AD1700311766 /* GiphyCollectionViewCell.swift in Sources */,
 				E4091E122087D46F00311766 /* GiphyViewModel.swift in Sources */,
 				E46BB07F208A3C3C001A0A13 /* GiphyAPIEnums.swift in Sources */,
