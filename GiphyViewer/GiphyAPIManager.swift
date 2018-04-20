@@ -155,6 +155,8 @@ class GiphyAPIManager {
     
 }
 
+
+
 public enum GiphyAPIRating: String {
     case Y = "Y"
     case G = "G"
@@ -162,6 +164,7 @@ public enum GiphyAPIRating: String {
     case PG13 = "PG-13"
     case R = "R"
     
+    static let allValues = [GiphyAPIRating.Y.rawValue, GiphyAPIRating.G.rawValue, GiphyAPIRating.PG.rawValue, GiphyAPIRating.PG13.rawValue, GiphyAPIRating.R.rawValue]
     
 }
 

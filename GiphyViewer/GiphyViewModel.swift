@@ -136,6 +136,10 @@ class GiphyViewModel {
         return model.count
     }
     
+    func giphyRatings() -> [String]{
+        return GiphyAPIRating.allValues
+    }
+    
     
     
 }
