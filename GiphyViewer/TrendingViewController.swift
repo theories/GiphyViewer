@@ -8,8 +8,9 @@
 
 import UIKit
 
-class TrendingViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class TrendingViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UISearchBarDelegate {
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var limitSlider: UISlider!
     @IBOutlet weak var pickerView: UIPickerView!
     
@@ -42,6 +43,7 @@ class TrendingViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         limitTextField.text = String(Int(limitSlider.value))
     }
     
+    // MARK: PickerView
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -72,6 +74,12 @@ class TrendingViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         return pickerLabel!;
     }
     
+    // MARK: Search Bar
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("search text: \(String(describing: searchBar.text))")
+        refreshData()
+    }
+
    
     func refreshData() {
         if let params = giphyParams() {
@@ -80,11 +88,18 @@ class TrendingViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     func giphyParams() -> GiphyAPIParams? {
+        var queryString:String? = nil
+        
+        if let searchTerm = searchBar.text,
+            !searchTerm.isEmpty {
+            queryString = searchTerm
+        }
+
         let limit = UInt(limitSlider.value)
         let row = pickerView.selectedRow(inComponent: 0)
         if let pickerViewData = self.pickerViewData {
             let rating = pickerViewData[row]
-            let params = GiphyAPIParams(rating: rating, limit: limit, queryString: nil)
+            let params = GiphyAPIParams(rating: rating, limit: limit, queryString: queryString)
             return params
         }
         

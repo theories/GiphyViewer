@@ -143,7 +143,7 @@ class TrendingCollectionViewController: UICollectionViewController, UICollection
         if let parentVC = self.parent as? TrendingViewController,
             let params = parentVC.giphyParams() {
             refreshControl.beginRefreshing()
-            viewModel.requestGiphyAPITrendingData(params: params)
+            requestGiphyData(params: params)
         }
         else {
             refreshControl.beginRefreshing()
@@ -172,7 +172,12 @@ class TrendingCollectionViewController: UICollectionViewController, UICollection
     
     // MARK: ViewModel communication
     func requestGiphyData(params:GiphyAPIParams) {
-        viewModel.requestGiphyAPITrendingData(params: params)
+        guard let _ = params.queryString else {
+            viewModel.requestGiphyAPITrendingData(params: params)
+            return
+        }
+        
+        viewModel.requestGiphyAPISearchData(params: params)
     }
     
     //MARK: Accessors

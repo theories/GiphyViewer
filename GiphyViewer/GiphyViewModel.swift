@@ -145,4 +145,14 @@ class GiphyViewModel {
         doTrending(limit: limit, rating: rating)
     }
     
+    func requestGiphyAPISearchData(params:GiphyAPIParams) {
+        let strRating = params.rating ?? GiphyAPIDefault.rating.rawValue
+        let rating = GiphyAPIRating(rawValue: strRating) ?? GiphyAPIDefault.rating
+        let limit = params.limit ?? GiphyAPIDefault.limit
+        let searchTerm = params.queryString ?? GiphyAPIDefault.queryString
+        doSearch(queryString: searchTerm, limit: limit, rating: rating)
+        
+        // func doSearch(queryString: String = GiphyAPIDefault.queryString, limit: UInt = GiphyAPIDefault.limit, rating: GiphyAPIRating = GiphyAPIDefault.rating) {
+        
+    }
 }

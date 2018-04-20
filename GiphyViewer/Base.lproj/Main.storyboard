@@ -17,7 +17,7 @@
             <objects>
                 <collectionViewController title="CollectionView" modalPresentationStyle="pageSheet" id="wUq-V0-rWX" customClass="TrendingCollectionViewController" customModule="GiphyViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" indicatorStyle="white" dataMode="prototypes" id="ESO-3d-JES">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="639"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="609"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aYk-he-jQc">
@@ -27,7 +27,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GiphyCell" id="p1M-Eg-aif" customClass="GiphyCollectionViewCell" customModule="GiphyViewer" customModuleProvider="target">
+                            <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="GiphyCell" id="p1M-Eg-aif" customClass="GiphyCollectionViewCell" customModule="GiphyViewer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -106,8 +106,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fq-kf-yjM">
-                                <rect key="frame" x="321" y="20" width="73" height="77"/>
+                            <pickerView clipsSubviews="YES" contentMode="scaleAspectFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2fq-kf-yjM">
+                                <rect key="frame" x="321" y="20" width="73" height="107"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="0.0049680021669999998" green="0.15803007650000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -120,13 +120,13 @@
                                 </connections>
                             </pickerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ioZ-Ud-1CY">
-                                <rect key="frame" x="0.0" y="97" width="414" height="639"/>
+                                <rect key="frame" x="0.0" y="127" width="414" height="609"/>
                                 <connections>
                                     <segue destination="wUq-V0-rWX" kind="embed" identifier="TrendingCollectionViewSegue" id="kmq-bl-mSB"/>
                                 </connections>
                             </containerView>
-                            <slider opaque="NO" contentMode="scaleAspectFit" semanticContentAttribute="spatial" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="1" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="yVM-UB-cev">
-                                <rect key="frame" x="72" y="38" width="79" height="31"/>
+                            <slider opaque="NO" contentMode="scaleAspectFit" semanticContentAttribute="spatial" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="1" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="yVM-UB-cev">
+                                <rect key="frame" x="72" y="68" width="79" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="mt1-ie-hib"/>
                                 </constraints>
@@ -134,26 +134,37 @@
                                     <action selector="sliderValueChanged:" destination="ZxH-z8-KI0" eventType="valueChanged" id="9xN-ld-iPo"/>
                                 </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Limit:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSE-Lg-7Ry">
-                                <rect key="frame" x="20.000000000000004" y="43" width="46.333333333333343" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Limit:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSE-Lg-7Ry">
+                                <rect key="frame" x="20" y="73" width="46.333333333333329" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="15" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SCl-4Q-qgs">
-                                <rect key="frame" x="95" y="69" width="20" height="17"/>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="15" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SCl-4Q-qgs">
+                                <rect key="frame" x="95" y="99" width="20" height="17"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWu-Ws-JxE">
-                                <rect key="frame" x="263.33333333333331" y="49" width="58.666666666666686" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Rating:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWu-Ws-JxE">
+                                <rect key="frame" x="263.33333333333331" y="79" width="58.666666666666664" height="21"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
+                            <searchBar contentMode="redraw" ambiguous="YES" placeholder="Search Giphy!!!" translatesAutoresizingMaskIntoConstraints="NO" id="GIx-BB-50v">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="R0h-AN-M9F"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ZxH-z8-KI0" id="Cf2-GB-tpy"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="0.64347330729166663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -165,11 +176,12 @@
                             <constraint firstItem="JSE-Lg-7Ry" firstAttribute="top" secondItem="BTV-vv-3dx" secondAttribute="top" constant="23" id="L55-QO-8TK"/>
                             <constraint firstItem="ioZ-Ud-1CY" firstAttribute="leading" secondItem="BTV-vv-3dx" secondAttribute="leading" id="LMa-eN-0WF"/>
                             <constraint firstItem="ioZ-Ud-1CY" firstAttribute="trailing" secondItem="BTV-vv-3dx" secondAttribute="trailing" id="UDo-WB-CQC"/>
-                            <constraint firstItem="ioZ-Ud-1CY" firstAttribute="top" secondItem="2fq-kf-yjM" secondAttribute="bottom" id="aCB-fD-hIh"/>
+                            <constraint firstItem="ioZ-Ud-1CY" firstAttribute="top" secondItem="2fq-kf-yjM" secondAttribute="bottom" constant="30" id="aCB-fD-hIh"/>
                             <constraint firstItem="SCl-4Q-qgs" firstAttribute="top" secondItem="BTV-vv-3dx" secondAttribute="top" constant="49" id="aIj-eu-CRx"/>
                             <constraint firstItem="yVM-UB-cev" firstAttribute="top" secondItem="BTV-vv-3dx" secondAttribute="top" constant="18" id="c72-iW-PJ3"/>
                             <constraint firstItem="2fq-kf-yjM" firstAttribute="top" secondItem="BTV-vv-3dx" secondAttribute="top" id="iF9-mf-ldp"/>
                             <constraint firstItem="yVM-UB-cev" firstAttribute="leading" secondItem="JSE-Lg-7Ry" secondAttribute="trailing" constant="7.6699999999999999" id="pq9-bS-30r"/>
+                            <constraint firstItem="GIx-BB-50v" firstAttribute="top" secondItem="aCm-ZY-YAO" secondAttribute="top" id="x3t-CT-H1Q"/>
                             <constraint firstItem="ioZ-Ud-1CY" firstAttribute="bottom" secondItem="BTV-vv-3dx" secondAttribute="bottom" id="x7I-RB-YU3"/>
                             <constraint firstItem="SWu-Ws-JxE" firstAttribute="top" secondItem="BTV-vv-3dx" secondAttribute="top" constant="29" id="xEZ-lH-sBz"/>
                         </constraints>
@@ -180,6 +192,7 @@
                         <outlet property="limitSlider" destination="yVM-UB-cev" id="oHQ-dU-KTl"/>
                         <outlet property="limitTextField" destination="SCl-4Q-qgs" id="gkz-rk-Puy"/>
                         <outlet property="pickerView" destination="2fq-kf-yjM" id="tus-6M-ENj"/>
+                        <outlet property="searchBar" destination="GIx-BB-50v" id="Wn3-4C-rYB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t4o-1M-uQF" userLabel="First Responder" sceneMemberID="firstResponder"/>
