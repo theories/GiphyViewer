@@ -143,8 +143,12 @@
                                     <segue destination="wUq-V0-rWX" kind="embed" identifier="TrendingCollectionViewSegue" id="kmq-bl-mSB"/>
                                 </connections>
                             </containerView>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="1" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="yVM-UB-cev">
+                                <rect key="frame" x="18" y="56" width="118" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uR7-K4-Hk5">
-                                <rect key="frame" x="51" y="59" width="89" height="22"/>
+                                <rect key="frame" x="329" y="56" width="89" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Refresh"/>
                                 <connections>
@@ -165,6 +169,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="3ot-gk-gOe"/>
                     <connections>
+                        <outlet property="limitSlider" destination="yVM-UB-cev" id="oHQ-dU-KTl"/>
                         <outlet property="pickerView" destination="2fq-kf-yjM" id="tus-6M-ENj"/>
                         <outlet property="refreshButton" destination="uR7-K4-Hk5" id="hpW-Q7-VHi"/>
                     </connections>

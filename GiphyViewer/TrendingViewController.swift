@@ -10,17 +10,18 @@ import UIKit
 
 class TrendingViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    @IBOutlet weak var limitSlider: UISlider!
     @IBOutlet weak var refreshButton: UIButton!
+    @IBOutlet weak var pickerView: UIPickerView!
+    
+    weak var collectionVC: TrendingCollectionViewController?
+    
     lazy var pickerViewData:[String]? = {
         guard let collectionVC = self.collectionVC else {
             return nil
         }
         return collectionVC.pickerViewData
     }()
-    
-    @IBOutlet weak var pickerView: UIPickerView!
-    weak var collectionVC: TrendingCollectionViewController?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,17 +66,25 @@ class TrendingViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     @IBAction func onRefreshTapped(_ sender: Any) {
-        requestGiphyData()
+        refreshData()
     }
     
-    func requestGiphyData() {
-        let row = pickerView.selectedRow(inComponent: 0)
-       
-        if let pickerViewData = self.pickerViewData {
-            let rating = pickerViewData[row]
-            let params = GiphyAPIParams(rating: rating, limit: 30, queryString: nil)
+    func refreshData() {
+        if let params = giphyParams() {
             collectionVC?.requestGiphyData(params: params)
         }
+    }
+    
+    func giphyParams() -> GiphyAPIParams? {
+        let limit = UInt(limitSlider.value)
+        let row = pickerView.selectedRow(inComponent: 0)
+        if let pickerViewData = self.pickerViewData {
+            let rating = pickerViewData[row]
+            let params = GiphyAPIParams(rating: rating, limit: limit, queryString: nil)
+            return params
+        }
+        
+        return nil
     }
      
     
