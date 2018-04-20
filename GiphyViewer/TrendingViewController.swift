@@ -25,6 +25,9 @@ class TrendingViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let index = collectionVC?.giphyDefaultRatingIndex() ?? 0
+        pickerView.selectRow(index, inComponent: 0, animated: true)
 
     }
     

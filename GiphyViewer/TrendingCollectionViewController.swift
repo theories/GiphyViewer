@@ -41,7 +41,7 @@ class TrendingCollectionViewController: UICollectionViewController, UICollection
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         
         viewModel = GiphyViewModel(endPoint: GiphyAPIEndpoint.Trending, delegate: self)
-        viewModel.run()
+        refreshData()
 
     }
     
@@ -144,6 +144,10 @@ class TrendingCollectionViewController: UICollectionViewController, UICollection
             refreshControl.beginRefreshing()
             viewModel.requestGiphyAPITrendingData(params: params)
         }
+        else {
+            refreshControl.beginRefreshing()
+            viewModel.doTrending()
+        }
 
     }
     
@@ -170,6 +174,11 @@ class TrendingCollectionViewController: UICollectionViewController, UICollection
         viewModel.requestGiphyAPITrendingData(params: params)
     }
     
+    //MARK: Accessors
+    
+    func giphyDefaultRatingIndex() -> Int? {
+        return viewModel.giphyDefaultRatingIndex()
+    }
     
 }
 

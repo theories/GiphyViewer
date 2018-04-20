@@ -130,6 +130,14 @@ class GiphyViewModel {
         return GiphyAPIRating.allValues
     }
     
+    func giphyDefaultRatingIndex() -> Int? {
+        return giphyRatingsIndex(rating: GiphyAPIDefault.rating)
+    }
+    
+    func giphyRatingsIndex(rating: GiphyAPIRating) -> Int? {
+        return giphyRatings().index(of: rating.rawValue)
+    }
+    
     func requestGiphyAPITrendingData(params:GiphyAPIParams) {
         let strRating = params.rating ?? GiphyAPIDefault.rating.rawValue
         let rating = GiphyAPIRating(rawValue: strRating) ?? GiphyAPIDefault.rating
