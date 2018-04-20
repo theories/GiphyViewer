@@ -76,10 +76,17 @@ class TrendingViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     // MARK: Search Bar
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("search text: \(String(describing: searchBar.text))")
+        self.searchBar.endEditing(true)
         refreshData()
     }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        self.searchBar.endEditing(true)
+    }
 
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.searchBar.endEditing(true)
+    }
    
     func refreshData() {
         if let params = giphyParams() {
