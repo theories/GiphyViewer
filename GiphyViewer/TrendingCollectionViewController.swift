@@ -9,7 +9,8 @@
 import UIKit
 
 
-class TrendingCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, RemoteDataConsumer {
+class TrendingCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, RemoteDataConsumer { //, UIPickerViewDelegate, UIPickerViewDataSource {
+  
     
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     var refreshControl: UIRefreshControl!
@@ -17,6 +18,8 @@ class TrendingCollectionViewController: UICollectionViewController, UICollection
     private let reuseIdentifier = "GiphyCell"
     private var collectionViewSizeChanged: Bool = false
     private let margin: CGFloat = 14.0
+    var pickerViewData = [String]()
+    
     
     private var viewModel:GiphyViewModel!
     
@@ -33,6 +36,8 @@ class TrendingCollectionViewController: UICollectionViewController, UICollection
             collectionView?.addSubview(refreshControl)
         }
 
+        pickerViewData = ["Row 1","Row 2","Row 3","Row 4","Row 5"]
+        
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         
@@ -123,6 +128,43 @@ class TrendingCollectionViewController: UICollectionViewController, UICollection
         return CGSize(width: width, height: width)
     }
     
+    //MARK: UICollectionReusableView methods
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        if (kind == UICollectionElementKindSectionHeader) {
+            let headerView:GiphyTrendingSectionHeader =  collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "GiphyTrendingHeaderView", for: indexPath) as! GiphyTrendingSectionHeader
+            
+            return headerView
+        }
+        
+        return UICollectionReusableView()
+        
+    }
+    
+    //MARK UIPickerViewDataSource & UIPickerViewDelegate methods
+    /*func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+ */
+    /*
+    @objc func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+ */
+    /*
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerViewData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerViewData[row]
+    }
+    */
     //MARK: custom methods
     private func setupFlowLayout() {
         flowLayout.minimumInteritemSpacing = margin
@@ -136,7 +178,6 @@ class TrendingCollectionViewController: UICollectionViewController, UICollection
     }
     
     private func updateUI(){
-        
         DispatchQueue.main.async {
             self.collectionView?.reloadData()
             self.refreshControl.endRefreshing()
