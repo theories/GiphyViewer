@@ -66,13 +66,22 @@ class GiphyGif {
     }
     
     func imageVariantURL(variant: ImageVariant) -> URL? {
-        if let images = self.images,
-        let imgVariant = images[variant.rawValue] as? [String: Any],
-        let url = imgVariant["url"] as? String {
-            return URL(string: url)
+        if let urlStr = imageVariantURLString(variant: variant) {
+            return URL(string: urlStr)
         }
         
         return nil
+    }
+    
+    func imageVariantURLString(variant: ImageVariant) -> String? {
+        if let images = self.images,
+            let imgVariant = images[variant.rawValue] as? [String: Any],
+            let url = imgVariant["url"] as? String {
+            return url
+        }
+        
+        return nil
+        
     }
     
     

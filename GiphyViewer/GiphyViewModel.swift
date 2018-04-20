@@ -98,17 +98,19 @@ class GiphyViewModel {
     
     func thumbNailImageURL(for index: Int) -> URL? {
 
-        if let gif = giphyGif(for: index) {
-            return gif.imageVariantURL(variant: ImageVariant.PreviewGif)
+        if let gif = giphyGif(for: index),
+            let url = gif.imageVariantURL(variant: ImageVariant.PreviewGif){
+            return url
         }
         
-        return nil
+        return downsizedImageURL(for:index)
     }
     
     func downsizedImageURL(for index: Int) -> URL? {
         
-        if let gif = giphyGif(for: index) {
-            return gif.imageVariantURL(variant: ImageVariant.Downsized)
+        if let gif = giphyGif(for: index),
+            let url = gif.imageVariantURL(variant: ImageVariant.Downsized){
+            return url
         }
         
         return nil
