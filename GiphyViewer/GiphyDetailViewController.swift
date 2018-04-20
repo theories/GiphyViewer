@@ -17,7 +17,7 @@ class GiphyDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //self.label.text = self.villain.name
+
         if let url = imageURL {
             loadImage(url: url)
         }
