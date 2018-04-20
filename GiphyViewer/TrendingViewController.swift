@@ -11,7 +11,6 @@ import UIKit
 class TrendingViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var limitSlider: UISlider!
-    @IBOutlet weak var refreshButton: UIButton!
     @IBOutlet weak var pickerView: UIPickerView!
     
     @IBOutlet weak var limitTextField: UITextField!
@@ -73,10 +72,7 @@ class TrendingViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         return pickerLabel!;
     }
     
-    @IBAction func onRefreshTapped(_ sender: Any) {
-        refreshData()
-    }
-    
+   
     func refreshData() {
         if let params = giphyParams() {
             collectionVC?.requestGiphyData(params: params)

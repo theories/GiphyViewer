@@ -37,7 +37,8 @@ class TrendingCollectionViewController: UICollectionViewController, UICollection
             collectionView?.addSubview(refreshControl)
         }
 
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        let attributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh", attributes: attributes)
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         
         viewModel = GiphyViewModel(endPoint: GiphyAPIEndpoint.Trending, delegate: self)
