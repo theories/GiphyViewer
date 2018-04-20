@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="o3a-O6-NfV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZxH-z8-KI0">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,46 +12,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Trending-->
-        <scene sceneID="qGm-7g-22F">
-            <objects>
-                <navigationController id="5WH-2p-fpE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Trending" id="8Dw-bf-76N"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wHj-bi-KzI">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="ZxH-z8-KI0" kind="relationship" relationship="rootViewController" id="BGM-FN-wYo"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Uf9-jl-MyS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-368" y="-600"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="bso-au-zph">
-            <objects>
-                <tabBarController id="o3a-O6-NfV" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ls9-GV-LDr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="5WH-2p-fpE" kind="relationship" relationship="viewControllers" id="X6G-qO-wid"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ITj-uz-n8g" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1061" y="-600"/>
-        </scene>
-        <!--Trending Collection View Controller-->
+        <!--CollectionView-->
         <scene sceneID="6mt-PC-A7G">
             <objects>
-                <collectionViewController modalPresentationStyle="pageSheet" id="wUq-V0-rWX" customClass="TrendingCollectionViewController" customModule="GiphyViewer" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController title="CollectionView" modalPresentationStyle="pageSheet" id="wUq-V0-rWX" customClass="TrendingCollectionViewController" customModule="GiphyViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" indicatorStyle="white" dataMode="prototypes" id="ESO-3d-JES">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="546"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="639"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aYk-he-jQc">
@@ -91,7 +57,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M29-iO-Lyj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1188" y="-657"/>
+            <point key="canvasLocation" x="911" y="-649"/>
         </scene>
         <!--Giphy Detail View Controller-->
         <scene sceneID="2yP-SE-aTH">
@@ -117,16 +83,16 @@
             </objects>
             <point key="canvasLocation" x="1800" y="-593"/>
         </scene>
-        <!--Trending View Controller-->
+        <!--Giphy API-->
         <scene sceneID="9DZ-0a-AVE">
             <objects>
-                <viewController id="ZxH-z8-KI0" customClass="TrendingViewController" customModule="GiphyViewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Giphy API" id="ZxH-z8-KI0" customClass="TrendingViewController" customModule="GiphyViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aCm-ZY-YAO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fq-kf-yjM">
-                                <rect key="frame" x="321" y="64" width="73" height="77"/>
+                                <rect key="frame" x="321" y="20" width="73" height="77"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="0.0049680021669999998" green="0.15803007650000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -139,13 +105,13 @@
                                 </connections>
                             </pickerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ioZ-Ud-1CY">
-                                <rect key="frame" x="0.0" y="141" width="414" height="546"/>
+                                <rect key="frame" x="0.0" y="97" width="414" height="639"/>
                                 <connections>
                                     <segue destination="wUq-V0-rWX" kind="embed" identifier="TrendingCollectionViewSegue" id="kmq-bl-mSB"/>
                                 </connections>
                             </containerView>
                             <slider opaque="NO" contentMode="scaleAspectFit" semanticContentAttribute="spatial" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="1" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="yVM-UB-cev">
-                                <rect key="frame" x="72" y="82" width="79" height="31"/>
+                                <rect key="frame" x="72" y="38" width="79" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="mt1-ie-hib"/>
                                 </constraints>
@@ -154,20 +120,20 @@
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Limit:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSE-Lg-7Ry">
-                                <rect key="frame" x="20.000000000000004" y="87" width="46.333333333333343" height="21"/>
+                                <rect key="frame" x="20.000000000000004" y="43" width="46.333333333333343" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="15" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SCl-4Q-qgs">
-                                <rect key="frame" x="95" y="113" width="20" height="17"/>
+                                <rect key="frame" x="95" y="69" width="20" height="17"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWu-Ws-JxE">
-                                <rect key="frame" x="263.33333333333331" y="93" width="58.666666666666686" height="21"/>
+                                <rect key="frame" x="263.33333333333331" y="49" width="58.666666666666686" height="21"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -194,7 +160,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BTV-vv-3dx"/>
                     </view>
-                    <navigationItem key="navigationItem" id="3ot-gk-gOe"/>
+                    <navigationItem key="navigationItem" title="Trending" id="3ot-gk-gOe"/>
                     <connections>
                         <outlet property="limitSlider" destination="yVM-UB-cev" id="oHQ-dU-KTl"/>
                         <outlet property="limitTextField" destination="SCl-4Q-qgs" id="gkz-rk-Puy"/>
