@@ -14,6 +14,7 @@ class TrendingViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var refreshButton: UIButton!
     @IBOutlet weak var pickerView: UIPickerView!
     
+    @IBOutlet weak var limitTextField: UITextField!
     weak var collectionVC: TrendingCollectionViewController?
     
     lazy var pickerViewData:[String]? = {
@@ -28,6 +29,7 @@ class TrendingViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         
         let index = collectionVC?.giphyDefaultRatingIndex() ?? 0
         pickerView.selectRow(index, inComponent: 0, animated: true)
+        limitTextField.text = String(Int(limitSlider.value))
 
     }
     
@@ -36,6 +38,9 @@ class TrendingViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         if(segue.identifier == "TrendingCollectionViewSegue"){
             collectionVC = segue.destination as? TrendingCollectionViewController
         }
+    }
+    @IBAction func sliderValueChanged(_ sender: Any) {
+        limitTextField.text = String(Int(limitSlider.value))
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
