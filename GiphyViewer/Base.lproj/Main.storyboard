@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="o3a-O6-NfV">
-    <device id="retina5_5" orientation="landscape">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,7 +16,7 @@
                 <navigationController id="5WH-2p-fpE" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Trending" id="8Dw-bf-76N"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wHj-bi-KzI">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="32"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -49,7 +49,7 @@
             <objects>
                 <collectionViewController modalPresentationStyle="pageSheet" id="wUq-V0-rWX" customClass="TrendingCollectionViewController" customModule="GiphyViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" indicatorStyle="white" dataMode="prototypes" id="ESO-3d-JES">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="273"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="546"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aYk-he-jQc">
@@ -97,11 +97,11 @@
             <objects>
                 <viewController storyboardIdentifier="GiphyDetailViewController" id="KCm-sX-Ove" customClass="GiphyDetailViewController" customModule="GiphyViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U6P-2Z-IP1">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zCm-uz-52d">
-                                <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
@@ -121,11 +121,11 @@
             <objects>
                 <viewController id="ZxH-z8-KI0" customClass="TrendingViewController" customModule="GiphyViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aCm-ZY-YAO">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fq-kf-yjM">
-                                <rect key="frame" x="643" y="32" width="73" height="77"/>
+                                <rect key="frame" x="321" y="64" width="73" height="77"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="0.0049680021669999998" green="0.15803007650000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -138,37 +138,37 @@
                                 </connections>
                             </pickerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ioZ-Ud-1CY">
-                                <rect key="frame" x="0.0" y="109" width="736" height="273"/>
+                                <rect key="frame" x="0.0" y="141" width="414" height="546"/>
                                 <connections>
                                     <segue destination="wUq-V0-rWX" kind="embed" identifier="TrendingCollectionViewSegue" id="kmq-bl-mSB"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uR7-K4-Hk5">
-                                <rect key="frame" x="324" y="54" width="89" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uR7-K4-Hk5">
+                                <rect key="frame" x="173" y="86" width="68" height="34"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <size key="titleShadowOffset" width="2" height="-3"/>
                                 <state key="normal" title="Refresh"/>
                                 <connections>
                                     <action selector="onRefreshTapped:" destination="ZxH-z8-KI0" eventType="touchUpInside" id="ilu-e9-XUU"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="1" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="yVM-UB-cev">
-                                <rect key="frame" x="96" y="47" width="118" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleAspectFit" semanticContentAttribute="spatial" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="1" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="yVM-UB-cev">
+                                <rect key="frame" x="72" y="82" width="79" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="mt1-ie-hib"/>
+                                </constraints>
                                 <connections>
                                     <action selector="sliderValueChanged:" destination="ZxH-z8-KI0" eventType="valueChanged" id="9xN-ld-iPo"/>
                                 </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Limit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSE-Lg-7Ry">
-                                <rect key="frame" x="20" y="55" width="58" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Limit:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSE-Lg-7Ry">
+                                <rect key="frame" x="20.000000000000004" y="87" width="46.333333333333343" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="15" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SCl-4Q-qgs">
-                                <rect key="frame" x="107" y="71" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="15" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SCl-4Q-qgs">
+                                <rect key="frame" x="95" y="113" width="20" height="17"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -177,11 +177,19 @@
                         </subviews>
                         <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="0.64347330729166663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="SCl-4Q-qgs" firstAttribute="leading" secondItem="JSE-Lg-7Ry" secondAttribute="trailing" constant="28.670000000000002" id="34j-NX-Ykh"/>
+                            <constraint firstItem="uR7-K4-Hk5" firstAttribute="centerX" secondItem="aCm-ZY-YAO" secondAttribute="centerX" id="81Z-QO-Gjz"/>
                             <constraint firstItem="BTV-vv-3dx" firstAttribute="trailing" secondItem="2fq-kf-yjM" secondAttribute="trailing" constant="20" id="Fj5-fZ-WHG"/>
+                            <constraint firstItem="JSE-Lg-7Ry" firstAttribute="leading" secondItem="BTV-vv-3dx" secondAttribute="leading" constant="20" id="HIa-1i-0Lq"/>
+                            <constraint firstItem="JSE-Lg-7Ry" firstAttribute="top" secondItem="BTV-vv-3dx" secondAttribute="top" constant="23" id="L55-QO-8TK"/>
                             <constraint firstItem="ioZ-Ud-1CY" firstAttribute="leading" secondItem="BTV-vv-3dx" secondAttribute="leading" id="LMa-eN-0WF"/>
                             <constraint firstItem="ioZ-Ud-1CY" firstAttribute="trailing" secondItem="BTV-vv-3dx" secondAttribute="trailing" id="UDo-WB-CQC"/>
                             <constraint firstItem="ioZ-Ud-1CY" firstAttribute="top" secondItem="2fq-kf-yjM" secondAttribute="bottom" id="aCB-fD-hIh"/>
+                            <constraint firstItem="SCl-4Q-qgs" firstAttribute="top" secondItem="BTV-vv-3dx" secondAttribute="top" constant="49" id="aIj-eu-CRx"/>
+                            <constraint firstItem="yVM-UB-cev" firstAttribute="top" secondItem="BTV-vv-3dx" secondAttribute="top" constant="18" id="c72-iW-PJ3"/>
                             <constraint firstItem="2fq-kf-yjM" firstAttribute="top" secondItem="BTV-vv-3dx" secondAttribute="top" id="iF9-mf-ldp"/>
+                            <constraint firstItem="yVM-UB-cev" firstAttribute="leading" secondItem="JSE-Lg-7Ry" secondAttribute="trailing" constant="7.6699999999999999" id="pq9-bS-30r"/>
+                            <constraint firstItem="uR7-K4-Hk5" firstAttribute="top" secondItem="BTV-vv-3dx" secondAttribute="top" constant="22" id="qvB-fy-hbY"/>
                             <constraint firstItem="ioZ-Ud-1CY" firstAttribute="bottom" secondItem="BTV-vv-3dx" secondAttribute="bottom" id="x7I-RB-YU3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BTV-vv-3dx"/>
@@ -196,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t4o-1M-uQF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="319.56521739130437" y="-600"/>
+            <point key="canvasLocation" x="318.84057971014494" y="-600"/>
         </scene>
     </scenes>
 </document>
