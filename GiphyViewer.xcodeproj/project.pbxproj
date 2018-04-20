@@ -27,6 +27,8 @@
 		E46BB07D208A3C1F001A0A13 /* GiphyAPIStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BB07B208A3C1F001A0A13 /* GiphyAPIStructs.swift */; };
 		E46BB07F208A3C3C001A0A13 /* GiphyAPIEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BB07E208A3C3C001A0A13 /* GiphyAPIEnums.swift */; };
 		E46BB080208A3C3C001A0A13 /* GiphyAPIEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BB07E208A3C3C001A0A13 /* GiphyAPIEnums.swift */; };
+		E46BB084208A3E13001A0A13 /* ViewModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BB083208A3E13001A0A13 /* ViewModelProtocols.swift */; };
+		E46BB085208A3E13001A0A13 /* ViewModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BB083208A3E13001A0A13 /* ViewModelProtocols.swift */; };
 		E4A10EFC2083E5E6008A0286 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A10EFB2083E5E6008A0286 /* AppDelegate.swift */; };
 		E4A10F012083E5E6008A0286 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4A10EFF2083E5E6008A0286 /* Main.storyboard */; };
 		E4A10F032083E5E6008A0286 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4A10F022083E5E6008A0286 /* Assets.xcassets */; };
@@ -71,6 +73,7 @@
 		E42B95412087EC99004655B8 /* GiphyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyDetailViewController.swift; sourceTree = "<group>"; };
 		E46BB07B208A3C1F001A0A13 /* GiphyAPIStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyAPIStructs.swift; sourceTree = "<group>"; };
 		E46BB07E208A3C3C001A0A13 /* GiphyAPIEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyAPIEnums.swift; sourceTree = "<group>"; };
+		E46BB083208A3E13001A0A13 /* ViewModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocols.swift; sourceTree = "<group>"; };
 		E4A10EF82083E5E6008A0286 /* GiphyViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GiphyViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4A10EFB2083E5E6008A0286 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4A10F002083E5E6008A0286 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -140,10 +143,7 @@
 		E46BB078208A3A8B001A0A13 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				E46BB07A208A3BE6001A0A13 /* struct-enum */,
-				E4091E0E2087D46F00311766 /* GiphyAPIManager.swift */,
-				E4091E0C2087D46E00311766 /* GiphyGif.swift */,
-				E4091E0F2087D46F00311766 /* GiphyImage.swift */,
+				E46BB082208A3DD2001A0A13 /* protocol */,
 				E4091E0D2087D46E00311766 /* GiphyViewModel.swift */,
 			);
 			name = ViewModel;
@@ -167,6 +167,25 @@
 				E46BB07E208A3C3C001A0A13 /* GiphyAPIEnums.swift */,
 			);
 			name = "struct-enum";
+			sourceTree = "<group>";
+		};
+		E46BB081208A3D74001A0A13 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E46BB07A208A3BE6001A0A13 /* struct-enum */,
+				E4091E0C2087D46E00311766 /* GiphyGif.swift */,
+				E4091E0F2087D46F00311766 /* GiphyImage.swift */,
+				E4091E0E2087D46F00311766 /* GiphyAPIManager.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E46BB082208A3DD2001A0A13 /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				E46BB083208A3E13001A0A13 /* ViewModelProtocols.swift */,
+			);
+			name = protocol;
 			sourceTree = "<group>";
 		};
 		E4A10EEF2083E5E6008A0286 = {
@@ -194,6 +213,7 @@
 		E4A10EFA2083E5E6008A0286 /* GiphyViewer */ = {
 			isa = PBXGroup;
 			children = (
+				E46BB081208A3D74001A0A13 /* Model */,
 				E46BB079208A3AD8001A0A13 /* View */,
 				E46BB078208A3A8B001A0A13 /* ViewModel */,
 				E4A10EFB2083E5E6008A0286 /* AppDelegate.swift */,
@@ -436,6 +456,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E46BB084208A3E13001A0A13 /* ViewModelProtocols.swift in Sources */,
 				E4091E0B2087AD1700311766 /* GiphyCollectionViewCell.swift in Sources */,
 				E4091E122087D46F00311766 /* GiphyViewModel.swift in Sources */,
 				E46BB07F208A3C3C001A0A13 /* GiphyAPIEnums.swift in Sources */,
@@ -460,6 +481,7 @@
 				E4A10F112083E5E6008A0286 /* GiphyViewerTests.swift in Sources */,
 				E46BB07D208A3C1F001A0A13 /* GiphyAPIStructs.swift in Sources */,
 				E4091E152087D46F00311766 /* GiphyAPIManager.swift in Sources */,
+				E46BB085208A3E13001A0A13 /* ViewModelProtocols.swift in Sources */,
 				E4091E172087D46F00311766 /* GiphyImage.swift in Sources */,
 				E4091E132087D46F00311766 /* GiphyViewModel.swift in Sources */,
 			);

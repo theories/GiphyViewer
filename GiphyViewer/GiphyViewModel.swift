@@ -8,13 +8,6 @@
 
 import Foundation
 
-protocol RemoteDataConsumer: class {
-    func onDataReady()
-    func onDataError()
-}
-
-
-
 
 class GiphyViewModel {
 
