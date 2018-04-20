@@ -13,7 +13,6 @@ class GiphyDetailViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     var imageURL:URL?
-    var panGestureRecognizer: UIPanGestureRecognizer!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
