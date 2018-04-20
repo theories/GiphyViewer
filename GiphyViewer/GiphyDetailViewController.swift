@@ -12,8 +12,8 @@ import SwiftyGif
 class GiphyDetailViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
-    
     var imageURL:URL?
+    var panGestureRecognizer: UIPanGestureRecognizer!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -23,10 +23,31 @@ class GiphyDetailViewController: UIViewController {
         }
     }
     
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        addGesture()
+    }
+    
+    func addGesture() {
+     
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(GiphyDetailViewController.handleSwipeGesture(_:)))
+        swipeRight.direction = UISwipeGestureRecognizerDirection.right
+        self.view.addGestureRecognizer(swipeRight)
+
+    }
+    
+    
     func loadImage(url: URL?) {
         if let thisURL = url {
             imageView.setGifFromURL(thisURL)
         }
+    }
+    
+    @objc func handleSwipeGesture(_ gesture: UIGestureRecognizer) {
+        _ = self.navigationController?.popViewController(animated: true)
+       
     }
     
     
