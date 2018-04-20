@@ -18,7 +18,7 @@
                 <collectionViewController title="CollectionView" modalPresentationStyle="pageSheet" id="wUq-V0-rWX" customClass="TrendingCollectionViewController" customModule="GiphyViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" indicatorStyle="white" dataMode="prototypes" id="ESO-3d-JES">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="583"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aYk-he-jQc">
                             <size key="itemSize" width="50" height="50"/>
@@ -27,19 +27,20 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="GiphyCell" id="p1M-Eg-aif" customClass="GiphyCollectionViewCell" customModule="GiphyViewer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GiphyCell" id="p1M-Eg-aif" customClass="GiphyCollectionViewCell" customModule="GiphyViewer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlL-e5-MT6">
-                                            <rect key="frame" x="5" y="5" width="40" height="45"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="0.0"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </imageView>
                                     </subviews>
                                 </view>
+                                <size key="customSize" width="50" height="0.0"/>
                                 <connections>
                                     <outlet property="imageView" destination="rlL-e5-MT6" id="ydb-ZI-2Ii"/>
                                 </connections>
@@ -57,7 +58,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M29-iO-Lyj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="684" y="-644"/>
+            <point key="canvasLocation" x="682.60869565217399" y="-644.429347826087"/>
         </scene>
         <!--Giphy Detail View Controller-->
         <scene sceneID="2yP-SE-aTH">
