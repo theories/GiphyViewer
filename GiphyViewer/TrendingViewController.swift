@@ -10,6 +10,7 @@ import UIKit
 
 class TrendingViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    @IBOutlet weak var refreshButton: UIButton!
     lazy var pickerViewData:[String]? = {
         guard let collectionVC = self.collectionVC else {
             return nil
@@ -62,5 +63,20 @@ class TrendingViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         
         return pickerLabel!;
     }
+    
+    @IBAction func onRefreshTapped(_ sender: Any) {
+        requestGiphyData()
+    }
+    
+    func requestGiphyData() {
+        let row = pickerView.selectedRow(inComponent: 0)
+       
+        if let pickerViewData = self.pickerViewData {
+            let rating = pickerViewData[row]
+            let params = GiphyAPIParams(rating: rating, limit: 30, queryString: nil)
+            collectionVC?.requestGiphyData(params: params)
+        }
+    }
+     
     
 }

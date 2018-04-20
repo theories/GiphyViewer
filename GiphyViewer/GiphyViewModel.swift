@@ -130,6 +130,11 @@ class GiphyViewModel {
         return GiphyAPIRating.allValues
     }
     
-    
+    func requestGiphyAPITrendingData(params:GiphyAPIParams) {
+        let strRating = params.rating ?? GiphyAPIDefault.rating.rawValue
+        let rating = GiphyAPIRating(rawValue: strRating) ?? GiphyAPIDefault.rating
+        let limit = params.limit ?? GiphyAPIDefault.limit
+        doTrending(limit: limit, rating: rating)
+    }
     
 }

@@ -160,6 +160,11 @@ class TrendingCollectionViewController: UICollectionViewController, UICollection
         updateUI()
     }
     
+    // MARK: ViewModel communication
+    func requestGiphyData(params:GiphyAPIParams) {
+        print("got request data")
+        viewModel.requestGiphyAPITrendingData(params: params)
+    }
     
     
 }

@@ -143,6 +143,14 @@
                                     <segue destination="wUq-V0-rWX" kind="embed" identifier="TrendingCollectionViewSegue" id="kmq-bl-mSB"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uR7-K4-Hk5">
+                                <rect key="frame" x="51" y="59" width="89" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Refresh"/>
+                                <connections>
+                                    <action selector="onRefreshTapped:" destination="ZxH-z8-KI0" eventType="touchUpInside" id="ilu-e9-XUU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="0.64347330729166663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -158,6 +166,7 @@
                     <navigationItem key="navigationItem" id="3ot-gk-gOe"/>
                     <connections>
                         <outlet property="pickerView" destination="2fq-kf-yjM" id="tus-6M-ENj"/>
+                        <outlet property="refreshButton" destination="uR7-K4-Hk5" id="hpW-Q7-VHi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t4o-1M-uQF" userLabel="First Responder" sceneMemberID="firstResponder"/>
