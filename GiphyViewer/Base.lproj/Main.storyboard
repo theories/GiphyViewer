@@ -17,7 +17,7 @@
             <objects>
                 <collectionViewController title="CollectionView" modalPresentationStyle="pageSheet" id="wUq-V0-rWX" customClass="TrendingCollectionViewController" customModule="GiphyViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" indicatorStyle="white" dataMode="prototypes" id="ESO-3d-JES">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="583"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aYk-he-jQc">
@@ -107,7 +107,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fq-kf-yjM">
-                                <rect key="frame" x="321" y="56" width="73" height="77"/>
+                                <rect key="frame" x="321" y="76" width="73" height="77"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="0.0049680021669999998" green="0.15803007650000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -120,13 +120,13 @@
                                 </connections>
                             </pickerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ioZ-Ud-1CY">
-                                <rect key="frame" x="0.0" y="133" width="414" height="603"/>
+                                <rect key="frame" x="0.0" y="153" width="414" height="583"/>
                                 <connections>
                                     <segue destination="wUq-V0-rWX" kind="embed" identifier="TrendingCollectionViewSegue" id="kmq-bl-mSB"/>
                                 </connections>
                             </containerView>
                             <slider opaque="NO" contentMode="scaleAspectFit" semanticContentAttribute="spatial" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="1" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="yVM-UB-cev">
-                                <rect key="frame" x="72" y="76" width="79" height="31"/>
+                                <rect key="frame" x="72" y="96" width="79" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="mt1-ie-hib"/>
                                 </constraints>
@@ -135,27 +135,27 @@
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Limit:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSE-Lg-7Ry">
-                                <rect key="frame" x="20.000000000000004" y="81" width="46.333333333333343" height="21"/>
+                                <rect key="frame" x="20.000000000000004" y="101" width="46.333333333333343" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="15" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SCl-4Q-qgs">
-                                <rect key="frame" x="95" y="111" width="20" height="17"/>
+                                <rect key="frame" x="95" y="128" width="22" height="20"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWu-Ws-JxE">
-                                <rect key="frame" x="263.33333333333331" y="81" width="58.666666666666686" height="21"/>
+                                <rect key="frame" x="263.33333333333331" y="101" width="58.666666666666686" height="21"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <searchBar contentMode="redraw" placeholder="Search Giphy!!!" translatesAutoresizingMaskIntoConstraints="NO" id="GIx-BB-50v">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="56"/>
                                 <color key="barTintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="search"/>
                                 <connections>
@@ -174,10 +174,10 @@
                             <constraint firstItem="SWu-Ws-JxE" firstAttribute="leadingMargin" relation="greaterThanOrEqual" secondItem="BTV-vv-3dx" secondAttribute="leading" constant="-142.66666666666669" id="Kfy-lh-tcJ"/>
                             <constraint firstItem="JSE-Lg-7Ry" firstAttribute="top" secondItem="GIx-BB-50v" secondAttribute="bottom" constant="25" id="L55-QO-8TK"/>
                             <constraint firstItem="ioZ-Ud-1CY" firstAttribute="leading" secondItem="BTV-vv-3dx" secondAttribute="leading" id="LMa-eN-0WF"/>
-                            <constraint firstItem="GIx-BB-50v" firstAttribute="top" secondItem="aCm-ZY-YAO" secondAttribute="top" id="TL2-av-Iii"/>
+                            <constraint firstItem="GIx-BB-50v" firstAttribute="top" secondItem="BTV-vv-3dx" secondAttribute="top" id="TL2-av-Iii"/>
                             <constraint firstItem="ioZ-Ud-1CY" firstAttribute="trailing" secondItem="BTV-vv-3dx" secondAttribute="trailing" id="UDo-WB-CQC"/>
                             <constraint firstItem="ioZ-Ud-1CY" firstAttribute="top" secondItem="2fq-kf-yjM" secondAttribute="bottom" id="aCB-fD-hIh"/>
-                            <constraint firstItem="SCl-4Q-qgs" firstAttribute="top" secondItem="yVM-UB-cev" secondAttribute="top" constant="35" id="aIj-eu-CRx"/>
+                            <constraint firstItem="SCl-4Q-qgs" firstAttribute="top" secondItem="yVM-UB-cev" secondAttribute="top" constant="32" id="aIj-eu-CRx"/>
                             <constraint firstItem="yVM-UB-cev" firstAttribute="top" secondItem="GIx-BB-50v" secondAttribute="bottom" constant="20" id="c72-iW-PJ3"/>
                             <constraint firstItem="2fq-kf-yjM" firstAttribute="top" secondItem="GIx-BB-50v" secondAttribute="bottom" id="iF9-mf-ldp"/>
                             <constraint firstItem="yVM-UB-cev" firstAttribute="leading" secondItem="JSE-Lg-7Ry" secondAttribute="trailing" constant="7.6699999999999999" id="pq9-bS-30r"/>
