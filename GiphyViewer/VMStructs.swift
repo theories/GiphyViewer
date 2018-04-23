@@ -14,7 +14,7 @@ struct GiphyAPIParams {
 
 struct GiphyAPIDefault {
     static let queryString:String = "cat"
-    static let limit:UInt = 30
+    static let limit:UInt = 15
     static let rating:GiphyAPIRating = .G
     static let offset:UInt = 0
 }
