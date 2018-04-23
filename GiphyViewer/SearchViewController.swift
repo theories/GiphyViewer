@@ -78,7 +78,7 @@ class SearchViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         {
             pickerLabel = UILabel()
             
-            pickerLabel?.font = UIFont(name: "Montserrat", size: 9)
+            pickerLabel?.font = UIFont.boldSystemFont(ofSize: 16)
             pickerLabel?.textAlignment = NSTextAlignment.center
             pickerLabel?.textColor = UIColor.white
         }

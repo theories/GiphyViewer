@@ -37,7 +37,8 @@ class SearchCollectionViewController: UICollectionViewController, UICollectionVi
             collectionView?.addSubview(refreshControl)
         }
 
-        let attributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        let font = UIFont.boldSystemFont(ofSize: 16)
+        let attributes = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: font]
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh", attributes: attributes)
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         

@@ -115,10 +115,10 @@
             </objects>
             <point key="canvasLocation" x="-784" y="-644"/>
         </scene>
-        <!--Giphy API-->
+        <!--Giphy API Search-->
         <scene sceneID="9DZ-0a-AVE">
             <objects>
-                <viewController title="Giphy API" id="ZxH-z8-KI0" customClass="SearchViewController" customModule="GiphyViewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Giphy API Search" id="ZxH-z8-KI0" customClass="SearchViewController" customModule="GiphyViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aCm-ZY-YAO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -183,7 +183,7 @@
                                     <outlet property="delegate" destination="ZxH-z8-KI0" id="Cf2-GB-tpy"/>
                                 </connections>
                             </searchBar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Error Occurred!" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hf7-Gx-Iax">
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Error Occurred!" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hf7-Gx-Iax">
                                 <rect key="frame" x="0.0" y="184" width="414" height="22"/>
                                 <color key="backgroundColor" red="0.39530462490000001" green="0.15146897009999999" blue="0.1237953735" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
