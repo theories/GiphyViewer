@@ -30,6 +30,7 @@ class TrendingViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         let index = collectionVC?.giphyDefaultRatingIndex() ?? 0
         pickerView.selectRow(index, inComponent: 0, animated: true)
         limitTextField.text = String(Int(limitSlider.value))
+       
 
     }
     
@@ -75,13 +76,26 @@ class TrendingViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     // MARK: Search Bar
+
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+        
+        let views = searchBar.subviews[0]
+        for subView in views.subviews {
+            if let element = subView as? UIButton {
+                element.setTitleColor(UIColor.black, for: .normal)
+            }
+        }
+    }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.searchBar.endEditing(true)
         refreshData()
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        self.searchBar.endEditing(true)
+        //self.searchBar.endEditing(true)
+        searchBar.setShowsCancelButton(false, animated: true)
     }
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
