@@ -14,7 +14,7 @@ Search the Giphy API in iOS
 
 ##### Installation
 
-1. Clone the repository: 
+1. Clone the repository 
 2. Run `pod install` at command line
 3. Open **GiphyViewer.xcworkspace** in XCode
 

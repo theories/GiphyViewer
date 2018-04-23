@@ -30,7 +30,6 @@ class TrendingViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         let index = collectionVC?.giphyDefaultRatingIndex() ?? 0
         pickerView.selectRow(index, inComponent: 0, animated: true)
         limitTextField.text = String(Int(limitSlider.value))
-       
 
     }
     
@@ -94,7 +93,6 @@ class TrendingViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        //self.searchBar.endEditing(true)
         searchBar.setShowsCancelButton(false, animated: true)
     }
 
