@@ -9,7 +9,7 @@
 import UIKit
 
 
-class TrendingCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, RemoteDataConsumer { //, UIPickerViewDelegate, UIPickerViewDataSource {
+class SearchCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, RemoteDataConsumer { //, UIPickerViewDelegate, UIPickerViewDataSource {
   
     
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
@@ -160,7 +160,7 @@ class TrendingCollectionViewController: UICollectionViewController, UICollection
     
     @objc private func refreshData(){
     
-        if let parentVC = self.parent as? TrendingViewController,
+        if let parentVC = self.parent as? SearchViewController,
             let params = parentVC.giphyParams() {
             refreshControl.beginRefreshing()
             requestGiphyData(params: params)

@@ -10,7 +10,7 @@
 		1058E04851AF2D495C564B9B /* Pods_GiphyViewerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0329732AB0C4C1AE2D8B0CA6 /* Pods_GiphyViewerTests.framework */; };
 		1DEAD62B3A5627E2731BA1C5 /* Pods_GiphyViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66953508F7535D4B1497A8C6 /* Pods_GiphyViewer.framework */; };
 		20BCEF17FCDD14F68DE13229 /* Pods_GiphyViewerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA806E6EB8240F7DD8043A15 /* Pods_GiphyViewerUITests.framework */; };
-		E4091E092087A91800311766 /* TrendingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4091E082087A91800311766 /* TrendingCollectionViewController.swift */; };
+		E4091E092087A91800311766 /* SearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4091E082087A91800311766 /* SearchCollectionViewController.swift */; };
 		E4091E0B2087AD1700311766 /* GiphyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4091E0A2087AD1700311766 /* GiphyCollectionViewCell.swift */; };
 		E4091E102087D46F00311766 /* GiphyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4091E0C2087D46E00311766 /* GiphyGif.swift */; };
 		E4091E112087D46F00311766 /* GiphyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4091E0C2087D46E00311766 /* GiphyGif.swift */; };
@@ -20,8 +20,8 @@
 		E4091E152087D46F00311766 /* GiphyAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4091E0E2087D46F00311766 /* GiphyAPIManager.swift */; };
 		E4091E162087D46F00311766 /* GiphyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4091E0F2087D46F00311766 /* GiphyImage.swift */; };
 		E4091E172087D46F00311766 /* GiphyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4091E0F2087D46F00311766 /* GiphyImage.swift */; };
-		E4091E1C20897B2C00311766 /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4091E1B20897B2C00311766 /* TrendingViewController.swift */; };
-		E4091E1D20897B2C00311766 /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4091E1B20897B2C00311766 /* TrendingViewController.swift */; };
+		E4091E1C20897B2C00311766 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4091E1B20897B2C00311766 /* SearchViewController.swift */; };
+		E4091E1D20897B2C00311766 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4091E1B20897B2C00311766 /* SearchViewController.swift */; };
 		E42B95422087EC99004655B8 /* GiphyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42B95412087EC99004655B8 /* GiphyDetailViewController.swift */; };
 		E46BB07F208A3C3C001A0A13 /* GiphyAPIEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BB07E208A3C3C001A0A13 /* GiphyAPIEnums.swift */; };
 		E46BB080208A3C3C001A0A13 /* GiphyAPIEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BB07E208A3C3C001A0A13 /* GiphyAPIEnums.swift */; };
@@ -64,13 +64,13 @@
 		7E2978FDD0AABF2D705F380C /* Pods-GiphyViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiphyViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-GiphyViewer/Pods-GiphyViewer.release.xcconfig"; sourceTree = "<group>"; };
 		8F642F88FA684E23FE41063E /* Pods-GiphyViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiphyViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GiphyViewer/Pods-GiphyViewer.debug.xcconfig"; sourceTree = "<group>"; };
 		DA806E6EB8240F7DD8043A15 /* Pods_GiphyViewerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GiphyViewerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4091E082087A91800311766 /* TrendingCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingCollectionViewController.swift; sourceTree = "<group>"; };
+		E4091E082087A91800311766 /* SearchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewController.swift; sourceTree = "<group>"; };
 		E4091E0A2087AD1700311766 /* GiphyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyCollectionViewCell.swift; sourceTree = "<group>"; };
 		E4091E0C2087D46E00311766 /* GiphyGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiphyGif.swift; sourceTree = "<group>"; };
 		E4091E0D2087D46E00311766 /* GiphyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiphyViewModel.swift; sourceTree = "<group>"; };
 		E4091E0E2087D46F00311766 /* GiphyAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiphyAPIManager.swift; sourceTree = "<group>"; };
 		E4091E0F2087D46F00311766 /* GiphyImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiphyImage.swift; sourceTree = "<group>"; };
-		E4091E1B20897B2C00311766 /* TrendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewController.swift; sourceTree = "<group>"; };
+		E4091E1B20897B2C00311766 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E42B95412087EC99004655B8 /* GiphyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyDetailViewController.swift; sourceTree = "<group>"; };
 		E46BB07E208A3C3C001A0A13 /* GiphyAPIEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyAPIEnums.swift; sourceTree = "<group>"; };
 		E46BB083208A3E13001A0A13 /* ViewModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocols.swift; sourceTree = "<group>"; };
@@ -155,9 +155,9 @@
 		E46BB079208A3AD8001A0A13 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E4091E1B20897B2C00311766 /* TrendingViewController.swift */,
+				E4091E1B20897B2C00311766 /* SearchViewController.swift */,
 				E42B95412087EC99004655B8 /* GiphyDetailViewController.swift */,
-				E4091E082087A91800311766 /* TrendingCollectionViewController.swift */,
+				E4091E082087A91800311766 /* SearchCollectionViewController.swift */,
 				E4091E0A2087AD1700311766 /* GiphyCollectionViewCell.swift */,
 				E46BB08D208AA15B001A0A13 /* GiphyCollectionHeader.swift */,
 			);
@@ -472,12 +472,12 @@
 				E4091E0B2087AD1700311766 /* GiphyCollectionViewCell.swift in Sources */,
 				E4091E122087D46F00311766 /* GiphyViewModel.swift in Sources */,
 				E46BB07F208A3C3C001A0A13 /* GiphyAPIEnums.swift in Sources */,
-				E4091E092087A91800311766 /* TrendingCollectionViewController.swift in Sources */,
+				E4091E092087A91800311766 /* SearchCollectionViewController.swift in Sources */,
 				E4A10EFC2083E5E6008A0286 /* AppDelegate.swift in Sources */,
 				E4091E102087D46F00311766 /* GiphyGif.swift in Sources */,
 				E4091E142087D46F00311766 /* GiphyAPIManager.swift in Sources */,
 				E42B95422087EC99004655B8 /* GiphyDetailViewController.swift in Sources */,
-				E4091E1C20897B2C00311766 /* TrendingViewController.swift in Sources */,
+				E4091E1C20897B2C00311766 /* SearchViewController.swift in Sources */,
 				E4091E162087D46F00311766 /* GiphyImage.swift in Sources */,
 				E46BB088208A3F0A001A0A13 /* VMStructs.swift in Sources */,
 			);
@@ -487,7 +487,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4091E1D20897B2C00311766 /* TrendingViewController.swift in Sources */,
+				E4091E1D20897B2C00311766 /* SearchViewController.swift in Sources */,
 				E46BB080208A3C3C001A0A13 /* GiphyAPIEnums.swift in Sources */,
 				E4091E112087D46F00311766 /* GiphyGif.swift in Sources */,
 				E4A10F112083E5E6008A0286 /* GiphyViewerTests.swift in Sources */,

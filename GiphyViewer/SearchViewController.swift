@@ -8,14 +8,14 @@
 
 import UIKit
 
-class TrendingViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UISearchBarDelegate {
+class SearchViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UISearchBarDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var limitSlider: UISlider!
     @IBOutlet weak var pickerView: UIPickerView!
     
     @IBOutlet weak var limitTextField: UITextField!
-    weak var collectionVC: TrendingCollectionViewController?
+    weak var collectionVC: SearchCollectionViewController?
     
     lazy var pickerViewData:[String]? = {
         guard let collectionVC = self.collectionVC else {
@@ -24,6 +24,7 @@ class TrendingViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         return collectionVC.pickerViewData
     }()
     
+    //UIViewController related methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,7 +37,7 @@ class TrendingViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "TrendingCollectionViewSegue"){
-            collectionVC = segue.destination as? TrendingCollectionViewController
+            collectionVC = segue.destination as? SearchCollectionViewController
         }
     }
     @IBAction func sliderValueChanged(_ sender: Any) {

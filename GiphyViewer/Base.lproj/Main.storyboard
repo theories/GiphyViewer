@@ -15,7 +15,7 @@
         <!--CollectionView-->
         <scene sceneID="6mt-PC-A7G">
             <objects>
-                <collectionViewController title="CollectionView" modalPresentationStyle="pageSheet" id="wUq-V0-rWX" customClass="TrendingCollectionViewController" customModule="GiphyViewer" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController title="CollectionView" modalPresentationStyle="pageSheet" id="wUq-V0-rWX" customClass="SearchCollectionViewController" customModule="GiphyViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" indicatorStyle="white" dataMode="prototypes" id="ESO-3d-JES">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="583"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -118,7 +118,7 @@
         <!--Giphy API-->
         <scene sceneID="9DZ-0a-AVE">
             <objects>
-                <viewController title="Giphy API" id="ZxH-z8-KI0" customClass="TrendingViewController" customModule="GiphyViewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Giphy API" id="ZxH-z8-KI0" customClass="SearchViewController" customModule="GiphyViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aCm-ZY-YAO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
