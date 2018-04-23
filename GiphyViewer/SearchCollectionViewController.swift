@@ -9,10 +9,10 @@
 import UIKit
 
 
-class SearchCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, RemoteDataConsumer { //, UIPickerViewDelegate, UIPickerViewDataSource {
-  
+class SearchCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, RemoteDataConsumer {
     
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    
     var refreshControl: UIRefreshControl!
  
     private let reuseIdentifier = "GiphyCell"
@@ -160,13 +160,12 @@ class SearchCollectionViewController: UICollectionViewController, UICollectionVi
     
     @objc private func refreshData(){
     
-        if let parentVC = self.parent as? SearchViewController,
-            let params = parentVC.giphyParams() {
-            refreshControl.beginRefreshing()
-            requestGiphyData(params: params)
+        refreshControl.beginRefreshing()
+        
+        if let parentVC = self.parent as? SearchViewController {
+            parentVC.refreshData()
         }
         else {
-            refreshControl.beginRefreshing()
             viewModel.doTrending()
         }
 
@@ -182,11 +181,17 @@ class SearchCollectionViewController: UICollectionViewController, UICollectionVi
     
     //MARK: RemoteDataConsumable Protocol Methods
     func onDataReady() {
+        if let parentVC = self.parent as? SearchViewController {
+            parentVC.onDataReady()
+        }
         updateUI()
     }
     
     func onDataError() {
         //an error occurred loading data
+        if let parentVC = self.parent as? SearchViewController {
+            parentVC.onDataError()
+        }
         updateUI()
     }
     

@@ -6,6 +6,8 @@
 //  Copyright © 2018 Thierry Sansaricq. All rights reserved.
 //
 
+import Foundation
+
 struct GiphyAPIParams {
     let rating:String?
     let limit:UInt?
@@ -19,3 +21,10 @@ struct GiphyAPIDefault {
     static let offset:UInt = 0
 }
 
+enum EnvironmentVariables: String {
+    case API_KEY
+    var value: String {
+        let key = ProcessInfo.processInfo.environment["GiphyViewer_API_KEY"]
+        return key ?? ""
+    }
+}

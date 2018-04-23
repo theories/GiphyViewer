@@ -47,7 +47,8 @@ class GiphyViewModel {
     
     func doSearch(queryString: String = GiphyAPIDefault.queryString, limit: UInt = GiphyAPIDefault.limit, rating: GiphyAPIRating = GiphyAPIDefault.rating) {
         
-        let mgr = GiphyAPIManager(apiKey: "dTYxlzydpneCauqFVT3mnnSteR0M0kwJ")
+        let apiKey = EnvironmentVariables.API_KEY.value
+        let mgr = GiphyAPIManager(apiKey: apiKey)
         self.endPoint = .Search
         self.currentSearchTerm = queryString
         
@@ -60,7 +61,8 @@ class GiphyViewModel {
     
     func doTrending(limit: UInt = GiphyAPIDefault.limit, rating: GiphyAPIRating = GiphyAPIDefault.rating){
 
-        let mgr = GiphyAPIManager(apiKey: "dTYxlzydpneCauqFVT3mnnSteR0M0kwJ")
+        let apiKey = EnvironmentVariables.API_KEY.value
+        let mgr = GiphyAPIManager(apiKey: apiKey)
         self.endPoint = .Trending
         self.currentSearchTerm = nil
 
@@ -74,6 +76,7 @@ class GiphyViewModel {
     func onDataLoaded(gifArray: [GiphyGif]?, error: NSError?) {
         if error != nil {
             //an error occurred
+            model = []
             delegate?.onDataError()
             return
         }

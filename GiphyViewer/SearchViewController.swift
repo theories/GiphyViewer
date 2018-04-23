@@ -9,10 +9,13 @@
 import UIKit
 
 class SearchViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UISearchBarDelegate {
+  
+    
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var limitSlider: UISlider!
     @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var errorTextField: UITextField!
     
     @IBOutlet weak var limitTextField: UITextField!
     weak var collectionVC: SearchCollectionViewController?
@@ -43,6 +46,16 @@ class SearchViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBAction func sliderValueChanged(_ sender: Any) {
         limitTextField.text = String(Int(limitSlider.value))
     }
+    
+    func showError(isHidden: Bool, str:String?) {
+        
+        if let str = str {
+            self.errorTextField.text = str
+        }
+        
+        self.errorTextField.isHidden = isHidden
+    }
+    
     
     // MARK: PickerView
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -103,6 +116,7 @@ class SearchViewController: UIViewController, UIPickerViewDelegate, UIPickerView
    
     func refreshData() {
         if let params = giphyParams() {
+            showError(isHidden: true, str: "")
             collectionVC?.requestGiphyData(params: params)
         }
     }
@@ -125,6 +139,24 @@ class SearchViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         
         return nil
     }
-     
+    
+    
+
+    
+}
+
+extension SearchViewController: RemoteDataConsumer {
+    //MARK: RemoteDataConsumer protocol methods
+    func onDataReady() {
+        DispatchQueue.main.async  {
+            self.showError(isHidden: true, str: "")
+        }
+    }
+    
+    func onDataError() {
+        DispatchQueue.main.async  {
+            self.showError(isHidden: false, str: "Error loading data!")
+        }
+    }
     
 }
