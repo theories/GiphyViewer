@@ -656,6 +656,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JNR6JL3MR6;
+				GIPHY_API_KEY = YOUR_GIPHY_API_KEY;
 				INFOPLIST_FILE = GiphyViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.treasureberry.GiphyViewer;
@@ -672,6 +673,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JNR6JL3MR6;
+				GIPHY_API_KEY = YOUR_GIPHY_API_KEY;
 				INFOPLIST_FILE = GiphyViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.treasureberry.GiphyViewer;

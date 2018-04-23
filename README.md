@@ -20,7 +20,6 @@ Search the Giphy API in iOS
 3. Open **GiphyViewer.xcworkspace** in XCode
 4. In XCode, select Product->Scheme->Manage Schemes
 5. Double click on the **GiphyViewer** scheme
-6. In the GiphyViewer scheme, select the **Arguments** tab
-7. Under **Environment Variables**, find the variable named `GiphyViewer_API_KEY`
-8. Modify the value of the variable. Replace `Enter_Your_Giphy_API_Key_Here` with your Giphy API Key (see developers.giphy.com)  
+6. Under **Build Settings** for the **GiphyViewer** target, find the __GIPHY_API_KEY__ setting in the User-Defined section 
+7. Modify the value of the variable. Replace `YOUR_GIPHY_API_KEY` with your Giphy API Key (see developers.giphy.com)  
 
