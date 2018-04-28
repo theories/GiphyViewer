@@ -9,11 +9,18 @@
 import XCTest
 @testable import GiphyViewer
 
+
 class GiphyViewerTests: XCTestCase {
+  
+    
+    var viewModel:GiphyViewModel!
+    var promise:XCTestExpectation?
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+
+        
     }
     
     override func tearDown() {
@@ -26,11 +33,63 @@ class GiphyViewerTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testSearchResultsParsesData(){
+        
+        /*
+         * acknowledgement to:
+         * http://www.mokacoding.com/blog/testing-delegates-in-swift-with-xctest/
+         * for the spy delegate pattern
+         */
+        
+        let apiManager = FakeGiphyAPIManager(apiKey: "") as GiphyAPIManager//:GiphyAPIManager = GiphyAPIManager(apiKey: "")
+        let spyDelegate = RemoteDataConsumerSpyDelegate()
+        let vm = GiphyViewModel(endPoint: GiphyAPIEndpoint.Search, delegate: spyDelegate, apiManager: apiManager)
+        
+        promise = expectation(description: "onDataReady() will be called on spy delegate")
+        spyDelegate.asyncExpectation = promise
+        vm.doSearch()
+        
+        waitForExpectations(timeout: 5) { error in
+
+            guard let _ = spyDelegate.dataReadyCalled else {
+                XCTFail("Expected delegate to be called")
+                return
+            }
+            
+            let numParsed = vm.count()
+            XCTAssertEqual(numParsed, 10)
+            //XCTAssertTrue(result)
+
         }
     }
+    
+    func testTrendingResultsParsesData(){
+        
+        let apiManager = FakeGiphyAPIManager(apiKey: "") as GiphyAPIManager//:GiphyAPIManager = GiphyAPIManager(apiKey: "")
+        let spyDelegate = RemoteDataConsumerSpyDelegate()
+        let vm = GiphyViewModel(endPoint: GiphyAPIEndpoint.Trending, delegate: spyDelegate, apiManager: apiManager)
+        
+        promise = expectation(description: "onDataReady() will be called on spy delegate")
+        spyDelegate.asyncExpectation = promise
+        vm.doTrending()
+        
+        waitForExpectations(timeout: 25) { error in
+            
+            guard let _ = spyDelegate.dataReadyCalled else {
+                XCTFail("Expected delegate to be called")
+                return
+            }
+            
+            let numParsed = vm.count()
+            XCTAssertEqual(numParsed, 10)
+            //XCTAssertTrue(result)
+            
+        }
+    }
+    
+  
+    
+    
+
     
 }
