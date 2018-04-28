@@ -10,7 +10,7 @@ import XCTest
 @testable import GiphyViewer
 
 
-class GiphyViewerTests: XCTestCase {
+class GiphyViewModelTests: XCTestCase {
   
     
     var viewModel:GiphyViewModel!
@@ -41,7 +41,7 @@ class GiphyViewerTests: XCTestCase {
          * for the spy delegate pattern
          */
         
-        let apiManager = FakeGiphyAPIManager(apiKey: "") as GiphyAPIManager//:GiphyAPIManager = GiphyAPIManager(apiKey: "")
+        let apiManager = FakeGiphyAPIManager(apiKey: "") as GiphyAPIManager
         let spyDelegate = RemoteDataConsumerSpyDelegate()
         let vm = GiphyViewModel(endPoint: GiphyAPIEndpoint.Search, delegate: spyDelegate, apiManager: apiManager)
         
@@ -58,14 +58,13 @@ class GiphyViewerTests: XCTestCase {
             
             let numParsed = vm.count()
             XCTAssertEqual(numParsed, 10)
-            //XCTAssertTrue(result)
 
         }
     }
     
     func testTrendingResultsParsesData(){
         
-        let apiManager = FakeGiphyAPIManager(apiKey: "") as GiphyAPIManager//:GiphyAPIManager = GiphyAPIManager(apiKey: "")
+        let apiManager = FakeGiphyAPIManager(apiKey: "") as GiphyAPIManager
         let spyDelegate = RemoteDataConsumerSpyDelegate()
         let vm = GiphyViewModel(endPoint: GiphyAPIEndpoint.Trending, delegate: spyDelegate, apiManager: apiManager)
         
@@ -73,7 +72,7 @@ class GiphyViewerTests: XCTestCase {
         spyDelegate.asyncExpectation = promise
         vm.doTrending()
         
-        waitForExpectations(timeout: 25) { error in
+        waitForExpectations(timeout: 5) { error in
             
             guard let _ = spyDelegate.dataReadyCalled else {
                 XCTFail("Expected delegate to be called")
@@ -82,14 +81,8 @@ class GiphyViewerTests: XCTestCase {
             
             let numParsed = vm.count()
             XCTAssertEqual(numParsed, 10)
-            //XCTAssertTrue(result)
-            
         }
     }
-    
-  
-    
-    
 
     
 }
