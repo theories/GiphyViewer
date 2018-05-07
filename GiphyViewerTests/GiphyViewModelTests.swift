@@ -12,10 +12,6 @@ import XCTest
 
 class GiphyViewModelTests: XCTestCase {
 
-    var viewModel:GiphyViewModel!
-    var promise:XCTestExpectation?
-    
-    
     func testSearchResultsParsesData(){
         
         /*
@@ -28,7 +24,7 @@ class GiphyViewModelTests: XCTestCase {
         let spyDelegate = RemoteDataConsumerSpyDelegate()
         let vm = GiphyViewModel(endPoint: GiphyAPIEndpoint.Search, delegate: spyDelegate, apiManager: apiManager)
         
-        promise = expectation(description: "onDataReady() will be called on spy delegate")
+        let promise:XCTestExpectation = expectation(description: "onDataReady() will be called on spy delegate")
         spyDelegate.asyncExpectation = promise
         vm.doSearch()
         
@@ -51,7 +47,7 @@ class GiphyViewModelTests: XCTestCase {
         let spyDelegate = RemoteDataConsumerSpyDelegate()
         let vm = GiphyViewModel(endPoint: GiphyAPIEndpoint.Trending, delegate: spyDelegate, apiManager: apiManager)
         
-        promise = expectation(description: "onDataReady() will be called on spy delegate")
+        let promise:XCTestExpectation = expectation(description: "onDataReady() will be called on spy delegate")
         spyDelegate.asyncExpectation = promise
         vm.doTrending()
         

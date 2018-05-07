@@ -30,8 +30,7 @@ class FakeGiphyAPIManager: GiphyAPIManager {
         let urlResponse = HTTPURLResponse(url: url!, statusCode: 200, httpVersion: nil, headerFields: nil)
         
         sessionMock = URLSessionMock(data: data, response: urlResponse, error: nil)
-        
-        
+
         return loadData(endPoint: GiphyAPIEndpoint.Search, parameters: params, completionHandler: completionHandler)
         
     }
@@ -48,8 +47,7 @@ class FakeGiphyAPIManager: GiphyAPIManager {
         let urlResponse = HTTPURLResponse(url: url!, statusCode: 200, httpVersion: nil, headerFields: nil)
         
         sessionMock = URLSessionMock(data: data, response: urlResponse, error: nil)
-        
-        
+
         return loadData(endPoint: GiphyAPIEndpoint.Trending, parameters: params, completionHandler: completionHandler)
         
     }
