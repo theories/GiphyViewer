@@ -67,5 +67,8 @@ fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
 
+# MacOS
+.DS_Store
+
 # custom
 giphy_api_key.txt
