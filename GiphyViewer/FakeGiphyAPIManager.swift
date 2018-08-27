@@ -18,9 +18,9 @@ class FakeGiphyAPIManager: GiphyAPIManager {
     var sessionMock:URLSessionMock!
 
     
-    override public func search(queryString: String, limit: UInt?, offset: UInt?, rating: GiphyAPIRating?,  completionHandler: @escaping ([GiphyGif]?, NSError?) -> Void) -> URLSessionDataTask? {
+    override public func search(queryString: String, limit: Int?, offset: Int?, rating: GiphyAPIRating?,  completionHandler: @escaping ([GiphyGif]?, NSError?) -> Void) -> URLSessionDataTask? {
         
-        let params: [String : Any] = [:]
+        let params: [String : String] = [:]
         
         let testBundle = Bundle(for: type(of: self))
         let path = testBundle.path(forResource: searchFile, ofType: "json")
@@ -36,8 +36,8 @@ class FakeGiphyAPIManager: GiphyAPIManager {
     }
     
     
-    override public func trending(limit: UInt?, offset: UInt?, rating: GiphyAPIRating?,  completionHandler: @escaping ([GiphyGif]?, NSError?) -> Void) -> URLSessionDataTask? {
-        let params: [String : Any] = [:]
+    override public func trending(limit: Int?, offset: Int?, rating: GiphyAPIRating?,  completionHandler: @escaping ([GiphyGif]?, NSError?) -> Void) -> URLSessionDataTask? {
+        let params: [String : String] = [:]
         
         let testBundle = Bundle(for: type(of: self))
         let path = testBundle.path(forResource: trendingFile, ofType: "json")
@@ -52,7 +52,7 @@ class FakeGiphyAPIManager: GiphyAPIManager {
         
     }
     
-    override internal func loadData(endPoint: GiphyAPIEndpoint, parameters: [String:Any], completionHandler: @escaping ([GiphyGif]?, NSError?) -> Void) -> URLSessionDataTask? {
+    override internal func loadData(endPoint: GiphyAPIEndpoint, parameters: [String:String], completionHandler: @escaping ([GiphyGif]?, NSError?) -> Void) -> URLSessionDataTask? {
         
         //var params = parameters
         

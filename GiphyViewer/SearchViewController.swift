@@ -134,7 +134,7 @@ class SearchViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             queryString = searchTerm
         }
 
-        let limit = UInt(limitSlider.value)
+        let limit = Int(limitSlider.value)
         let row = pickerView.selectedRow(inComponent: 0)
         if let pickerViewData = self.pickerViewData {
             let rating = pickerViewData[row]

@@ -50,7 +50,7 @@ class GiphyViewModel {
     }
 
     
-    func doSearch(queryString: String = GiphyAPIDefault.queryString, limit: UInt = GiphyAPIDefault.limit, rating: GiphyAPIRating = GiphyAPIDefault.rating) {
+    func doSearch(queryString: String = GiphyAPIDefault.queryString, limit: Int = GiphyAPIDefault.limit, rating: GiphyAPIRating = GiphyAPIDefault.rating) {
         
         let apiKey = EnvironmentVariables.API_KEY.value
         let mgr:GiphyAPIManager = apiManager ?? GiphyAPIManager(apiKey: apiKey)
@@ -65,7 +65,7 @@ class GiphyViewModel {
         })
     }
     
-    func doTrending(limit: UInt = GiphyAPIDefault.limit, rating: GiphyAPIRating = GiphyAPIDefault.rating){
+    func doTrending(limit: Int = GiphyAPIDefault.limit, rating: GiphyAPIRating = GiphyAPIDefault.rating){
 
         let apiKey = EnvironmentVariables.API_KEY.value
         let mgr:GiphyAPIManager = apiManager ?? GiphyAPIManager(apiKey: apiKey)

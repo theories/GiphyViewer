@@ -29,40 +29,40 @@ class GiphyAPIManager {
     
 
     
-    public func search(queryString: String, limit: UInt?, offset: UInt?, rating: GiphyAPIRating?,  completionHandler: @escaping ([GiphyGif]?, NSError?) -> Void) -> URLSessionDataTask? {
+    public func search(queryString: String, limit: Int?, offset: Int?, rating: GiphyAPIRating?,  completionHandler: @escaping ([GiphyGif]?, NSError?) -> Void) -> URLSessionDataTask? {
     
-        var params: [String : Any] = ["q":queryString as Any]
+        var params: [String : String] = ["q":queryString]
         
         if let thisLimit = limit {
-            params["limit"] = thisLimit as Any
+            params["limit"] = String(thisLimit)
         }
         
         if let thisOffset = offset {
-            params["offset"] = thisOffset as Any
+            params["offset"] = String(thisOffset)
         }
         
         if let thisRating = rating {
-            params["rating"] = thisRating.rawValue as Any
+            params["rating"] = thisRating.rawValue
         }
     
         return loadData(endPoint: GiphyAPIEndpoint.Search, parameters: params, completionHandler: completionHandler)
     
     }
     
-    public func trending(limit: UInt?, offset: UInt?, rating: GiphyAPIRating?,  completionHandler: @escaping ([GiphyGif]?, NSError?) -> Void) -> URLSessionDataTask? {
+    public func trending(limit: Int?, offset: Int?, rating: GiphyAPIRating?,  completionHandler: @escaping ([GiphyGif]?, NSError?) -> Void) -> URLSessionDataTask? {
         
-        var params: [String : Any] = [:]
+        var params: [String : String] = [:]
         
         if let thisLimit = limit {
-            params["limit"] = thisLimit as Any
+            params["limit"] = String(thisLimit)
         }
         
         if let thisOffset = offset {
-            params["offset"] = thisOffset as Any
+            params["offset"] = String(thisOffset)
         }
         
         if let thisRating = rating {
-            params["rating"] = thisRating.rawValue as Any
+            params["rating"] = thisRating.rawValue
         }
         
         return loadData(endPoint: GiphyAPIEndpoint.Trending, parameters: params, completionHandler: completionHandler)
@@ -70,12 +70,12 @@ class GiphyAPIManager {
     }
     
     
-    internal func loadData(endPoint: GiphyAPIEndpoint, parameters: [String:Any], completionHandler: @escaping ([GiphyGif]?, NSError?) -> Void) -> URLSessionDataTask? {
+    internal func loadData(endPoint: GiphyAPIEndpoint, parameters: [String:String], completionHandler: @escaping ([GiphyGif]?, NSError?) -> Void) -> URLSessionDataTask? {
         
         var params = parameters
         var urlString = (GiphyAPIManager.BaseURL as NSString).appendingPathComponent(endPoint.rawValue)
         
-        params["api_key"] = apiKey as Any
+        params["api_key"] = apiKey
         
         urlString += "?"
         
