@@ -6,7 +6,7 @@ target 'GiphyViewer' do
   use_frameworks!
 
   # Pods for GiphyViewer
-  pod 'SwiftyGif', '~> 4.1'
+  pod 'SwiftyGif', '~> 5.1'
 
   target 'GiphyViewerTests' do
     inherit! :search_paths

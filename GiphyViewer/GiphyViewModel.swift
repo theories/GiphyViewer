@@ -38,13 +38,11 @@ class GiphyViewModel {
     func run () {
         
         switch(endPoint) {
-        case .Search:
+        case .Search?:
             doSearch()
-        case .Trending:
+        case .Trending?:
             doTrending()
         case .none: break
-        case .some(_): break
-            
         }
 
     }
