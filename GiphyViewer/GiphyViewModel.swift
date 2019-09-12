@@ -147,7 +147,7 @@ class GiphyViewModel {
     }
     
     func giphyRatingsIndex(rating: GiphyAPIRating) -> Int? {
-        return giphyRatings().index(of: rating.rawValue)
+        return giphyRatings().firstIndex(of: rating.rawValue)
     }
     
     func requestGiphyAPITrendingData(params:GiphyAPIParams) {

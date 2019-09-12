@@ -32,7 +32,7 @@ class GiphyDetailViewController: UIViewController {
     func addGesture() {
      
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(GiphyDetailViewController.handleSwipeGesture(_:)))
-        swipeRight.direction = UISwipeGestureRecognizerDirection.right
+        swipeRight.direction = UISwipeGestureRecognizer.Direction.right
         self.view.addGestureRecognizer(swipeRight)
 
     }

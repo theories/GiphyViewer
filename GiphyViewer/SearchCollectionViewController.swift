@@ -38,7 +38,7 @@ class SearchCollectionViewController: UICollectionViewController, UICollectionVi
         }
 
         let font = UIFont.boldSystemFont(ofSize: 16)
-        let attributes = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: font]
+        let attributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: font]
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh", attributes: attributes)
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         
@@ -116,7 +116,7 @@ class SearchCollectionViewController: UICollectionViewController, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var minColumns:CGFloat = 3.0
         
-        if UIInterfaceOrientationIsLandscape(UIApplication.shared.statusBarOrientation) {
+        if UIApplication.shared.statusBarOrientation.isLandscape {
             minColumns = 5.0
         }
         
@@ -135,9 +135,9 @@ class SearchCollectionViewController: UICollectionViewController, UICollectionVi
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
         
-        if kind == UICollectionElementKindSectionHeader {
+        if kind == UICollectionView.elementKindSectionHeader {
             var v : GiphyCollectionHeader! = nil
-            v = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "GiphyCollectionHeaderView", for: indexPath) as? GiphyCollectionHeader
+            v = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "GiphyCollectionHeaderView", for: indexPath) as? GiphyCollectionHeader
             var headerTxt:String = "Now Trending"
             
             if let searchTerm = self.viewModel.currentSearchTerm {
