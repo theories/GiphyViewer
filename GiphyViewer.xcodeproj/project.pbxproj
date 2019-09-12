@@ -687,11 +687,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = L8UX5S34CP;
 				GIPHY_API_KEY = YOUR_GIPHY_API_KEY;
 				INFOPLIST_FILE = GiphyViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.treasureberry.GiphyViewer;
+				PRODUCT_BUNDLE_IDENTIFIER = io.route9.GiphyViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -704,11 +704,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = L8UX5S34CP;
 				GIPHY_API_KEY = YOUR_GIPHY_API_KEY;
 				INFOPLIST_FILE = GiphyViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.treasureberry.GiphyViewer;
+				PRODUCT_BUNDLE_IDENTIFIER = io.route9.GiphyViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
