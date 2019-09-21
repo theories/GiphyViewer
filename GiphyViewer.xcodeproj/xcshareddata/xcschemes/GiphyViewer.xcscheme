@@ -42,7 +42,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E4A10F162083E5E6008A0286"
+               BlueprintIdentifier = "E4563B502335B197005C6A00"
                BuildableName = "GiphyViewerUITests.xctest"
                BlueprintName = "GiphyViewerUITests"
                ReferencedContainer = "container:GiphyViewer.xcodeproj">
