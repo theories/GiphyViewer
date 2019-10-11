@@ -182,16 +182,20 @@ class SearchCollectionViewController: UICollectionViewController, UICollectionVi
     
     //MARK: RemoteDataConsumable Protocol Methods
     func onDataReady() {
-        if let parentVC = self.parent as? SearchViewController {
-            parentVC.onDataReady()
+        DispatchQueue.main.async {
+            if let parentVC = self.parent as? SearchViewController {
+                parentVC.onDataReady()
+            }
         }
         updateUI()
     }
     
     func onDataError() {
         //an error occurred loading data
-        if let parentVC = self.parent as? SearchViewController {
-            parentVC.onDataError()
+        DispatchQueue.main.async {
+            if let parentVC = self.parent as? SearchViewController {
+                parentVC.onDataError()
+            }
         }
         updateUI()
     }
